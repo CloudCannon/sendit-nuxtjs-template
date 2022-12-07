@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-two",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "bookshop-sass:fetch-theme-color": "node site/js/fetch-theme-color.js"
+
+  },
+  "dependencies": {
+    "@nuxt/components": "^2.2.1",
+    "@nuxt/content": "^1.15.1",
+    "core-js": "^3.25.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {
+    "sass": "^1.56.1",
+    "sass-loader": "^10.4.1"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "logo": "/images/footer-logo.svg",
+  "copyright": "MyCompany, All rights reserved!",
+  "social": [
+    {
+      "link": "https://www.facebook.com/",
+      "icon": "ph-facebook-logo",
+      "icon_alt": "Facebook"
+    },
+    {
+      "link": "https://www.instagram.com/",
+      "icon": "ph-instagram-logo",
+      "icon_alt": "Instagram"
+    },
+    {
+      "link": "https://twitter.com/",
+      "icon": "ph-twitter-logo",
+      "icon_alt": "Twitter"
+    },
+    {
+      "link": "https://www.github.com/",
+      "icon": "ph-github-logo",
+      "icon_alt": "GitHub"
+    },
+    {
+      "link": "https://www.youtube.com/",
+      "icon": "ph-youtube-logo",
+      "icon_alt": "YouTube"
+    }
+  ],
+  "sections": [
+    {
+      "title": "Main Pages",
+      "links": [
+        {
+          "link": "/",
+          "text": "Home"
+        },
+        {
+          "link": "/feature",
+          "text": "Feature"
+        },
+        {
+          "link": "/pricing",
+          "text": "Price"
+        },
+        {
+          "link": "/about",
+          "text": "About"
+        }
+      ]
+    },
+    {
+      "title": "Community",
+      "links": [
+        {
+          "link": "/blog",
+          "text": "Blog"
+        },
+        {
+          "link": "/404",
+          "text": "404"
+        },
+        {
+          "link": "/sitemap.xml",
+          "text": "Sitemap"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        {
+          "link": "/contact",
+          "text": "Contact"
+        },
+        {
+          "link": "/privacy",
+          "text": "Privacy Policy"
+        }
+      ]
+    }
+  ],
+  "_inputs": {
+    "logo": {
+      "type": "image"
+    }
+  }
+}

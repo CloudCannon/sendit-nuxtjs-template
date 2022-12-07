@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'mixins';
+@import 'globals';
+// TODO: add this styling into the vue <style tag>
+@import 'components/hero';
+@import 'components/team';
+@import 'components/video';
+@import 'components/table';
+@import 'components/form';
+@import 'components/error';
+@import "components/faq";
+@import "components/feature";
+@import "components/header";
+@import "components/login";
+@import "components/testimonial";
+@import "components/signup";
+@import "components/counter";
+
+@import 'components/privacy/privacy';
+
+
+// @import "components/navbar";
+// @import "components/hero";
+// @import "components/about";
+// @import "components/feature";
+// @import "components/access";
+// @import "components/team";
+// @import "components/testimonial";
+// @import "components/galery";
+// @import "components/works";
+// @import "components/pricing";
+// @import "components/cta";
+// @import "components/footer";
+// @import "components/blog";
+// @import "components/services";
+// @import "components/video";
+// @import "components/faq";
+// @import "components/contact-form";
+// @import "components/sing-up";
+// @import "components/counter-up";

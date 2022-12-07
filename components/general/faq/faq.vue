@@ -1,0 +1,81 @@
+<template>
+   <section class="faq-two" :data-cms-bind="dataBinding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 mx-auto">
+               <div class="section-header">
+                  <h2>{{block.title}} <span>{{block.title_suffix}}</span></h2>
+                  <p>{{block.description }}</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="accordion" id="accordionExample">
+                  <!-- TODO: sort this vfor loop
+                  {% for item in faq %}
+                  {% if forloop.index == 1 %}
+                  <div class="accordion-item shows">
+                     <span>0{{forloop.index}}</span>
+                     <h2 class="accordion-header" id="headingOne">
+                        <button
+                           class="accordion-button"
+                           type="button"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseOne"
+                           aria-expanded="true"
+                           aria-controls="collapseOne"
+                           onclick="accordionBorder()"
+                        >
+                           <p class="header-content">{{item.title}}</p>
+                        </button>
+                     </h2>
+                     <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                     >
+                        <div class="accordion-body">{{item.description | markdownify}}</div>
+                     </div>
+                  </div>
+                  {% else %}
+                  <div class="accordion-item">
+                     <span>0{{forloop.index}}</span>
+                     <h2 class="accordion-header" id="heading{{forloop.index}}">
+                        <button
+                           class="accordion-button collapsed"
+                           type="button"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapse{{forloop.index}}"
+                           aria-expanded="false"
+                           aria-controls="collapse{{forloop.index}}"
+                        >
+                           <p class="header-content">{{item.title}}</p>
+                        </button>
+                     </h2>
+                     <div
+                        id="collapse{{forloop.index}}"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading{{forloop.index}}"
+                        data-bs-parent="#accordionExample"
+                     >
+                        <div class="accordion-body">{{item.description | markdownify}}</div>
+                     </div>
+                  </div>
+                  {% endif %} {% endfor %}
+               -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</template>
+<script>
+   export default {
+      props: [
+         'block','dataBinding'
+      ]
+   }
+</script>
+
