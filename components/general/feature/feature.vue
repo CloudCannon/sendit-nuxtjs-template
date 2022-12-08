@@ -9,7 +9,7 @@
             </div>
             <div class="effect-one">
               <img
-                src="/images/feature/effect-1.png"
+                src="~/assets/images/feature/effect-1.png"
                 alt="effect-image"
                 loading="lazy"
               />
@@ -49,7 +49,7 @@
             </div>
             <div class="effect-two">
               <img
-                src="/images/feature/effect-2.png"
+                src="~/assets/images/feature/effect-2.png"
                 alt="effect-image"
                 loading="lazy"
               />

@@ -12,7 +12,7 @@
                         <a :href="'tel:' + block.phone.cell"
                            >{{ block.phone.cell }}
                            <span>
-                              <img src="/images/contact/call-add.svg" alt="call-add" loading="lazy" />
+                              <img src="~/assets/images/contact/call-add.svg" alt="call-add" loading="lazy" />
                            </span>
                         </a>
                      </div>
@@ -22,7 +22,7 @@
                            >{{ block.email.email }}
                            <span>
                               <img
-                                 src="/images/contact/directbox-send.svg"
+                                 src="~/assets/images/contact/directbox-send.svg"
                                  alt="send-box"
                                  loading="lazy"
                               />
@@ -88,7 +88,7 @@
                      </div>
                   </form>
                   <div class="effect">
-                     <img src="/images/contact/effects.png" alt="effects" loading="lazy" />
+                     <img src="~/assets/images/contact/effects.png" alt="effects" loading="lazy" />
                   </div>
                </div>
             </div>

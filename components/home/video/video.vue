@@ -12,14 +12,14 @@
             />
             <div class="effect-one">
               <img
-                src="/images/video/effect-one.png"
+                src="~/assets/images/video/effect-one.png"
                 alt="effect"
                 loading="lazy"
               />
             </div>
             <div class="effect-two">
               <img
-                src="/images/video/effect-two.png"
+                src="~/assets/images/video/effect-two.png"
                 alt="effect"
                 loading="lazy"
               />

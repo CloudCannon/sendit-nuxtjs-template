@@ -7,7 +7,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-two',
+    title: 'Sendit',
     htmlAttrs: {
       lang: 'en'
     },

@@ -13,9 +13,9 @@
             </div>
             <div class="col-lg-6">
                <div class="feature-hero-banner">
-                  <img :src="block.image_path" alt="banner-image" loading="lazy" />
+                  <img :src="block.image" alt="banner-image" loading="lazy" />
                   <div class="shape">
-                     <img src="/images/feature/effect-4.png" alt="shape" loading="lazy" />
+                     <img src="~/assets/images/feature/effect-4.png" alt="shape" loading="lazy" />
                   </div>
                </div>
             </div>

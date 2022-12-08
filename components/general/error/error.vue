@@ -6,7 +6,7 @@
           <div class="error-content text-center">
             <div class="logo mb-7">
               <a class="navbar-brand" href="/">
-                <img src="/images/logo.svg" alt="" class="" />
+                <img src="~/assets/images/logo.svg" alt="" class="" />
               </a>
             </div>
             <img :src="block.image_path" alt="error-image" />
