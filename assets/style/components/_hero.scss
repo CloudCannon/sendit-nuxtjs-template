@@ -1,3 +1,149 @@
+.pricing-inner {
+  position: relative;
+  padding: $base-padding * 14 $base-padding * 0 $base-padding * 27;
+  @include media-breakpoint-down-xxl {
+     padding: $base-padding * 10 $base-padding * 0 $base-padding * 27;
+  }
+  @include media-breakpoint-down-lg {
+     padding: $base-padding * 10 $base-padding * 0 $base-padding * 25;
+  }
+  @include media-breakpoint-down-md {
+     padding: $base-padding * 10 $base-padding * 0 $base-padding * 27;
+  }
+  @include media-breakpoint-down-sm {
+     padding: $base-padding * 8.5 $base-padding * 0 $base-padding * 27;
+  }
+  .section-header {
+     padding: 0 0 $base-padding * 1;
+     h2 {
+        font-size: $base-font-size * 4;
+        line-height: 80px;
+        margin-bottom: $base-margin * 1.5;
+        @include media-breakpoint-down-xl {
+           font-size: $base-font-size * 3.9;
+        }
+        @include media-breakpoint-down-lg {
+           font-size: $base-font-size * 3.5;
+           line-height: 70px;
+        }
+        @include media-breakpoint-down-md {
+           font-size: $base-font-size * 3;
+           line-height: 60px;
+        }
+        @include media-breakpoint-down-sm {
+           font-size: $base-font-size * 2.5;
+           line-height: 50px;
+        }
+     }
+     p {
+        font-size: $base-font-size * 1.35;
+     }
+  }
+}
+
+.hero-two {
+  position: relative;
+  background: $color-gray-dark;
+  padding: $base-padding * 11.3 0 $base-padding * 5;
+  z-index: 1;
+  overflow: hidden;
+  @include media-breakpoint-down-xl {
+    padding: $base-padding * 8 0 $base-padding * 2;
+  }
+  @include media-breakpoint-down-lg {
+    padding: $base-padding * 6 0 $base-padding * 5;
+  }
+  @include media-breakpoint-down-md {
+    padding: $base-padding * 6 0 $base-padding * 5;
+  }
+  @include media-breakpoint-down-sm {
+    padding: $base-padding * 5.5 0 $base-padding * 5;
+  }
+  &-shape {
+    -webkit-mask-image: url(/images/hero/hero-two-shape.png);
+    mask-image: url(/images/hero/hero-two-shape.png);
+    background: $color-background-effects;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 384px;
+    height: 671px;
+  }
+  &-content {
+    margin-top: 3rem;
+    padding-left: $base-padding * 18;
+    @include media-breakpoint-down-xxxl {
+      padding-left: $base-padding * 9;
+    }
+    @include media-breakpoint-down-xxl {
+      padding-left: $base-padding * 5;
+    }
+    @include media-breakpoint-down-lg {
+      padding: 0 $base-padding * 4 $base-padding * 6;
+      text-align: center;
+    }
+    @include media-breakpoint-down-md {
+      padding: 0 $base-padding * 3 $base-padding * 6;
+    }
+    @include media-breakpoint-down-sm {
+      padding: 0 $base-padding * 0 $base-padding * 6;
+    }
+    h1 {
+      line-height: 80px;
+      @include media-breakpoint-down-lg {
+        font-size: $base-font-size * 4;
+        line-height: 80px;
+      }
+      @include media-breakpoint-down-md {
+        font-size: $base-font-size * 3;
+        line-height: 60px;
+      }
+      @include media-breakpoint-down-sm {
+        font-size: $base-font-size * 2.5;
+        line-height: 50px;
+      }
+    }
+    p {
+      font-size: $base-padding * 1.4;
+    }
+  }
+  &-banner {
+    position: relative;
+    text-align: right;
+    max-width: 100%;
+    margin-right: -13px;
+    padding-right: $base-padding * 18;
+    @include media-breakpoint-down-xxxl {
+      padding-right: initial;
+    }
+    img {
+      border-radius: 0px;
+    }
+    &-shape {
+      -webkit-mask-image: url('~/assets/images/hero/hero-three-shape.png');
+      mask-image: url('~/assets/images/hero/hero-three-shape.png');
+      background: $color-background-effects;
+      width: 904px;
+      height: 1016px;
+      position: absolute;
+      top: -26%;
+      right: 18rem;
+      z-index: -1;
+      @media screen and (max-width: 2055px){
+        right: -3%;
+      }
+      @include media-breakpoint-down-xxl {
+        right: -3%;
+      }
+      @include media-breakpoint-down-lg {
+        top: -27%;
+        left: 7%;
+      }
+    }
+  }
+}
+
 .about-hero-two {
   padding: $base-padding * 9 0 $base-padding * 3;
   background: $color-secondary-dark;
@@ -13,7 +159,7 @@
     padding: $base-padding * 10 0 $base-padding * 38;
   }
   @include media-breakpoint-down-sm {
-    padding: $base-padding * 8.5 0 $base-padding * 27;
+    padding: $base-padding * 8.5 0 $base-padding * 33;
   }
 
   &-content {
@@ -85,6 +231,9 @@
   }
   &-banner {
     position: relative;
+    width: 100%;
+    height: 100%;
+
     .image-one,
     .image-two,
     .image-three {
@@ -158,24 +307,36 @@
         width: 30%;
       }
     }
-    .pattern,
-    .pattern-two {
+    .pattern {
+      -webkit-mask-image: url('~/assets/images/about/patterns-two.png');
+      mask-image: url('~/assets/images/about/patterns-two.png');
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-size: contain;
+      -webkit-mask-size: contain;
+      background: $color-background-effects;
       position: absolute;
+      width: 100%;
+      height: 100%;
       top: 0;
       left: -20px;
-      img {
-        max-width: 100%;
-      }
       @include media-breakpoint-down-xxl {
         left: -100px;
+        width: 120%;
+        height: 120%;
       }
       @include media-breakpoint-down-xl {
         left: 0px;
+        width: 85%;
+        height: 50rem;
+      }
+      @include media-breakpoint-down-sm {
+        width: 100%;
+        height: 33rem;
       }
     }
   }
 }
-
 
 .contact-hero {
   background: $color-secondary-dark;
@@ -210,26 +371,6 @@
         width: 80%;
         @include media-breakpoint-down-lg {
            width: 100%;
-        }
-     }
-  }
-}
-
-.privacy-hero {
-  background: #f7f8fa;
-  padding: $base-padding * 13.5 0 $base-padding * 37;
-  @include media-breakpoint-down-xxl {
-     padding: $base-padding * 12 0 $base-padding * 37;
-  }
-  @include media-breakpoint-down-sm {
-     padding: $base-padding * 10 0 $base-padding * 37;
-  }
-  &-content {
-     h1 {
-        font-size: $base-font-size * 4;
-        margin-bottom: $base-margin * 1.5;
-        @include media-breakpoint-down-md {
-           font-size: $base-font-size * 2.5;
         }
      }
   }
@@ -297,136 +438,16 @@
         max-width: 100%;
      }
      .shape {
+        -webkit-mask-image: url('~/assets/images/feature/effect-4.png');
+        mask-image: url('~/assets/images/feature/effect-4.png');
+        background: $color-background-effects;
         position: absolute;
         top: 2%;
         z-index: -1;
         right: 0%;
-     }
-  }
-}
-
-.pricing-inner {
-  position: relative;
-  padding: $base-padding * 14 $base-padding * 0 $base-padding * 27;
-  @include media-breakpoint-down-xxl {
-     padding: $base-padding * 10 $base-padding * 0 $base-padding * 27;
-  }
-  @include media-breakpoint-down-lg {
-     padding: $base-padding * 10 $base-padding * 0 $base-padding * 25;
-  }
-  @include media-breakpoint-down-md {
-     padding: $base-padding * 10 $base-padding * 0 $base-padding * 27;
-  }
-  @include media-breakpoint-down-sm {
-     padding: $base-padding * 8.5 $base-padding * 0 $base-padding * 27;
-  }
-  .section-header {
-     padding: 0 0 $base-padding * 1;
-     h2 {
-        font-size: $base-font-size * 4;
-        line-height: 80px;
-        margin-bottom: $base-margin * 1.5;
-        @include media-breakpoint-down-xl {
-           font-size: $base-font-size * 3.9;
-        }
-        @include media-breakpoint-down-lg {
-           font-size: $base-font-size * 3.5;
-           line-height: 70px;
-        }
-        @include media-breakpoint-down-md {
-           font-size: $base-font-size * 3;
-           line-height: 60px;
-        }
-        @include media-breakpoint-down-sm {
-           font-size: $base-font-size * 2.5;
-           line-height: 50px;
+        img {
+           visibility: hidden;
         }
      }
-     p {
-        font-size: $base-font-size * 1.35;
-     }
-  }
-}
-
-.hero-two {
-  position: relative;
-  background: $color-gray-dark;
-  padding: $base-padding * 11.3 0 $base-padding * 5;
-  z-index: 1;
-  overflow: hidden;
-  @include media-breakpoint-down-xl {
-    padding: $base-padding * 8 0 $base-padding * 2;
-  }
-  @include media-breakpoint-down-lg {
-    padding: $base-padding * 6 0 $base-padding * 5;
-  }
-  @include media-breakpoint-down-md {
-    padding: $base-padding * 6 0 $base-padding * 5;
-  }
-  @include media-breakpoint-down-sm {
-    padding: $base-padding * 5.5 0 $base-padding * 5;
-  }
-  &-shape {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  &-content {
-    padding-left: $base-padding * 18;
-    @include media-breakpoint-down-xxxl {
-      padding-left: $base-padding * 9;
-    }
-    @include media-breakpoint-down-xxl {
-      padding-left: $base-padding * 5;
-    }
-    @include media-breakpoint-down-lg {
-      padding: 0 $base-padding * 4 $base-padding * 6;
-      text-align: center;
-    }
-    @include media-breakpoint-down-md {
-      padding: 0 $base-padding * 3 $base-padding * 6;
-    }
-    @include media-breakpoint-down-sm {
-      padding: 0 $base-padding * 0 $base-padding * 6;
-    }
-    h1 {
-      line-height: 80px;
-      @include media-breakpoint-down-lg {
-        font-size: $base-font-size * 4;
-        line-height: 80px;
-      }
-      @include media-breakpoint-down-md {
-        font-size: $base-font-size * 3;
-        line-height: 60px;
-      }
-      @include media-breakpoint-down-sm {
-        font-size: $base-font-size * 2.5;
-        line-height: 50px;
-      }
-    }
-    p {
-      font-size: $base-padding * 1.4;
-    }
-  }
-  &-banner {
-    position: relative;
-    text-align: right;
-    max-width: 100%;
-    margin-right: -13px;
-    z-index: 1;
-    img {
-      border-radius: 0px;
-    }
-    &-shape {
-      position: absolute;
-      top: -26%;
-      left: 3%;
-      z-index: -1;
-      @include media-breakpoint-down-lg {
-        top: -27%;
-        left: -22%;
-      }
-    }
   }
 }

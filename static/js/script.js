@@ -1,6 +1,5 @@
 $(document).ready(function () {
     "use strict";
-  
     $(window).on("scroll", function () {
       var windscroll = $(window).scrollTop();
       if (windscroll >= 70) {
