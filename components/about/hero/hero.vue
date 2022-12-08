@@ -6,7 +6,7 @@
         <div class="col-xl-5 col-lg-10 mx-auto">
           <div class="about-hero-two-content position-relative">
             <h2>{{ block.title }}</h2>
-            {{ block.description }}
+            <p>{{ block.description }}</p>
             <div
               class="scroll-down d-flex justify-content-center justify-content-xl-start"
             >

@@ -32,10 +32,10 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/style/main.scss',
     '@/static/bootstrap/bootstrap.min.css',
     '@/static/phosphor-icons/css/phosphor.css',
-    '@/static/magnific-popup/magnific-popup.css'
+    '@/static/magnific-popup/magnific-popup.css',
+    '@/assets/style/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

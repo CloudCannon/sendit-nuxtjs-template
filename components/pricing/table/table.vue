@@ -27,7 +27,7 @@
                   </div>
                   <div class="card-body">
                      <ul class="list-unstyled">
-                        <li class="{% if feature.is_active == false %} deactive {% endif %}" v-for="feature in item.feature">
+                        <li class="{% if feature.is_active == false %} deactive {% endif %}" v-for="feature in item.features">
                            <i class="ph-check {% if feature.is_active == false %} deactive {% endif %}"></i>
                            {{feature.item}}
                         </li>
