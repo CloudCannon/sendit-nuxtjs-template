@@ -10,7 +10,7 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _bookshop_name: global/signup
+  - _bookshop_name: general/signup
     title: Create Account
     form:
       fullname:

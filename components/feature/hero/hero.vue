@@ -7,7 +7,7 @@
                   <h1 class="">{{ block.title}}</h1>
                   {{block.description }}
                   <div class="d-block mb-6">
-                     <a :href="block.btn.link" class="btn btn-primary btn-lg"> {{block.btn.text}} </a>
+                     <a :href="block.button.link" class="btn btn-primary btn-lg"> {{block.button.text}} </a>
                   </div>
                </div>
             </div>

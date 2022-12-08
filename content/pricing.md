@@ -103,7 +103,7 @@ content_blocks:
           link: /signup
           text: Try This Free
 
-  - _bookshop_name: global/faq
+  - _bookshop_name: general/faq
     title: Have
     title_suffix: Questions?
     description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.

@@ -102,7 +102,7 @@ content_blocks:
           link: /signup
           text: Try This Free
 
-  - _bookshop_name: global/faq
+  - _bookshop_name: general/faq
     title: Have
     title_suffix: Questions?
     description: The stats are in our favour. SaaSFlow doesn't just help you with your email marketing, we get you customer relationships that last.

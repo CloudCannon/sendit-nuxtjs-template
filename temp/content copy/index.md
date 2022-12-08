@@ -10,7 +10,7 @@ content_blocks:
       text: Try This Free
       link: /signup
 
-  - _bookshop_name: global/counter
+  - _bookshop_name: general/counter
     title: Scale your
     title_suffix: Business
     description: We have an extensive library of pre-written sales emails, proven marketing templates, and more to get you started on your next project.
@@ -34,7 +34,7 @@ content_blocks:
     image_alt: Thumbnail for video
     video_url: https://vimeo.com/45830194
 
-  - _bookshop_name: global/header
+  - _bookshop_name: general/header
     title: "Sendit "
     title_suffix: Features
     remove_top_padding: true
@@ -43,7 +43,7 @@ content_blocks:
       email content creation, dynamic personalization, and customer
       segmentation.
 
-  - _bookshop_name: global/feature
+  - _bookshop_name: general/feature
     image: /images/feature/feature-card-one.png
     image_alt: Message inbox
     title: "Email Campaign in one minute"
@@ -53,7 +53,7 @@ content_blocks:
       text: Try This Free
     reversed: false
 
-  - _bookshop_name: global/feature
+  - _bookshop_name: general/feature
     image: /images/feature/feature-card-two.png
     image_alt: Visitor chart
     title: "See every Lead in one Place"
@@ -63,7 +63,7 @@ content_blocks:
       text: Try This Free
     reversed: true
 
-  - _bookshop_name: global/feature
+  - _bookshop_name: general/feature
     image: /images/feature/feature-card-three.png
     image_alt: File upload
     title: "100% free uploads"
@@ -73,7 +73,7 @@ content_blocks:
       text: Try This Free
     reversed: false
 
-  - _bookshop_name: global/testimonial
+  - _bookshop_name: general/testimonial
     title: Build relationships that
     title_suffix: last
     description: Customers from around the world are building game changing email marketing campaigns.

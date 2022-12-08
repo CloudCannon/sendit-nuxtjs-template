@@ -26,7 +26,7 @@ content_blocks:
       text: "Try This Free"
       link: "/signup"
 
-  - _bookshop_name: global/counter
+  - _bookshop_name: general/counter
     title: Built for your
     title_suffix: Business
     description: We've built Sendit from the ground up the help grow your business faster.

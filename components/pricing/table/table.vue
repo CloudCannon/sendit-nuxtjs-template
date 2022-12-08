@@ -1,0 +1,53 @@
+<template>
+   <section class="pricing pb-xxl-20 pb-lg-15 pb-md-5" :data-cms-bind="dataBinding">
+      <!-- TODO: -->
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4" v-for="item in block.pricing_tier">
+               <div class="card pricing-item {% if item.is_active %} active {% endif %}">
+                  <h5 class="card-title">{{item.tier}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <div class="price" v-if="item.has_discount">
+                     <p class="pricingtable">${{item.discount_price}}</p>
+                     <div class="discount">
+                        <p>${{item.price}}</p>
+                        <div class="vector vector-one">
+                           <img src="/images/pricing/cross-shape.png" alt="cross-shape" loading="lazy" />
+                        </div>
+                     </div>
+                     <div class="shape top-0">
+                        <img src="/images/pricing/shape-two.png" alt="shape" loading="lazy" />
+                     </div>
+                  </div>
+                  <div class="price" v-else>
+                     <p><span>${{item.price}}</span></p>
+                     <div class="shape">
+                        <img src="/images/pricing/shape-one.png" alt="shape" loading="lazy" />
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <ul class="list-unstyled">
+                        <li class="{% if feature.is_active == false %} deactive {% endif %}" v-for="feature in item.feature">
+                           <i class="ph-check {% if feature.is_active == false %} deactive {% endif %}"></i>
+                           {{feature.item}}
+                        </li>
+                     </ul>
+                     <div class="link">
+                        <a :href="item.button.link" class="btn btn-lg btn-white">
+                           {{item.button.text}}
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</template>
+<script>
+   export default {
+      props: [
+         'block','dataBinding'
+      ]
+   }
+</script>

@@ -9,7 +9,7 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _bookshop_name: global/login
+  - _bookshop_name: general/login
     title: Log In
     fullname:
       heading: Full Name

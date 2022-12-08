@@ -12,59 +12,55 @@
          <div class="row">
             <div class="col-lg-12">
                <div class="accordion" id="accordionExample">
-                  <!-- TODO: sort this vfor loop
-                  {% for item in faq %}
-                  {% if forloop.index == 1 %}
-                  <div class="accordion-item shows">
-                     <span>0{{forloop.index}}</span>
-                     <h2 class="accordion-header" id="headingOne">
-                        <button
-                           class="accordion-button"
-                           type="button"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapseOne"
-                           aria-expanded="true"
-                           aria-controls="collapseOne"
-                           onclick="accordionBorder()"
+                  <template v-for="(item, index) in block.FAQ">
+                     <div class="accordion-item shows" v-if="((index + 1) == 1)">
+                        <span>0{{index + 1}}</span>
+                        <h2 class="accordion-header" id="headingOne">
+                           <button
+                              class="accordion-button"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne"
+                              aria-expanded="true"
+                              aria-controls="collapseOne"
+                              onclick="accordionBorder()"
+                           >
+                              <p class="header-content">{{item.title}}</p>
+                           </button>
+                        </h2>
+                        <div
+                           id="collapseOne"
+                           class="accordion-collapse collapse show"
+                           aria-labelledby="headingOne"
+                           data-bs-parent="#accordionExample"
                         >
-                           <p class="header-content">{{item.title}}</p>
-                        </button>
-                     </h2>
-                     <div
-                        id="collapseOne"
-                        class="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample"
-                     >
-                        <div class="accordion-body">{{item.description | markdownify}}</div>
+                           <div class="accordion-body">{{item.description}}</div>
+                        </div>
                      </div>
-                  </div>
-                  {% else %}
-                  <div class="accordion-item">
-                     <span>0{{forloop.index}}</span>
-                     <h2 class="accordion-header" id="heading{{forloop.index}}">
-                        <button
-                           class="accordion-button collapsed"
-                           type="button"
-                           data-bs-toggle="collapse"
-                           data-bs-target="#collapse{{forloop.index}}"
-                           aria-expanded="false"
-                           aria-controls="collapse{{forloop.index}}"
+                     <div class="accordion-item" v-else>
+                        <span>0{{(index + 1)}}</span>
+                        <h2 class="accordion-header" :id="'heading' + (index + 1)">
+                           <button
+                              class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              :data-bs-target="'#collapse' + (index + 1)"
+                              aria-expanded="false"
+                              :aria-controls="'collapse' +(index + 1)"
+                           >
+                              <p class="header-content">{{item.title}}</p>
+                           </button>
+                        </h2>
+                        <div
+                           :id="'collapse' + (index + 1)"
+                           class="accordion-collapse collapse"
+                           :aria-labelledby="'heading'+(index + 1)"
+                           data-bs-parent="#accordionExample"
                         >
-                           <p class="header-content">{{item.title}}</p>
-                        </button>
-                     </h2>
-                     <div
-                        id="collapse{{forloop.index}}"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="heading{{forloop.index}}"
-                        data-bs-parent="#accordionExample"
-                     >
-                        <div class="accordion-body">{{item.description | markdownify}}</div>
+                           <div class="accordion-body">{{item.description}}</div>
+                        </div>
                      </div>
-                  </div>
-                  {% endif %} {% endfor %}
-               -->
+                  </template>
                </div>
             </div>
          </div>

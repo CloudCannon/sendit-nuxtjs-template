@@ -5,7 +5,7 @@
       :is="block._bookshop_name.toString()"
       :block="block"
       :dataBinding="`#content_blocks.${index}`"
-      :key="block._bookshop_name.toString()"
+      :key="index"
         ></component>
       <nuxt-content :document="page"/>
     </div>
