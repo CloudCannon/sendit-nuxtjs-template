@@ -63,7 +63,7 @@
                         </div>
                      </div>
                      <div class="col-md-12">
-                        <button type="submit" class="btn btn-submit w-100">{{block.form.signup_text}}</button>
+                        <button type="submit" class="btn btn-submit w-100">{{block.form.sign_up_text}}</button>
                      </div>
                      <div class="col-md-12 mt-3">
                         <label for="" class="d-block text-center mb-0">or</label>
@@ -130,8 +130,8 @@
                      </div>
                      <div class="divider mt-9"></div>
                      <div class="col-md-12">
-                        <a :href="block.form.login_btn.link" class="create-account">
-                           {{ block.form.login_btn.text}}
+                        <a :href="block.form.log_in_button.link" class="create-account">
+                           {{ block.form.log_in_button.text}}
                         </a>
                      </div>
                   </form>

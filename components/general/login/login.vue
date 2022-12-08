@@ -32,7 +32,7 @@
                 </div>
               </div>
               <div class="col-md-12">
-                <button type="submit" class="btn btn-submit  w-100">{{block.signin_btn.text}}</button>
+                <button type="submit" class="btn btn-submit  w-100">{{block.log_in_button.text}}</button>
               </div>
               <div class="col-md-12 mt-3">
                 <label for="" class="d-block text-center mb-0">or</label>
@@ -75,7 +75,7 @@
               </div>
               <div class="divider mt-9"></div>
               <div class="col-md-12">
-                <a :href="block.signup_btn.link" class="create-account">{{block.signup_btn.text}}</a>
+                <a :href="block.sign_up_button.link" class="create-account">{{block.sign_up_button.text}}</a>
               </div>
               </form>
           </div>

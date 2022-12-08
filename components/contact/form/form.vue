@@ -83,7 +83,7 @@
                      <input type="text" name="_gotcha" style="display: none" />
                      <div class="col-12">
                         <button type="submit" class="btn btn-primary btn-lg mt-7">
-                           <span class="position-relative">{{ block.form.submit_btn.text }}</span>
+                           <span class="position-relative">{{ block.form.submit_button.text }}</span>
                         </button>
                      </div>
                   </form>
