@@ -1,8 +1,6 @@
 <template>
     <div>
-      <h1>{{ blog }} / {{ slug }}</h1>
-      <p>{{ page.title }}</p>
-      <h2 v-if="page.title == 'blog'">TEST </h2>
+        <h1>{{ page.title }}</h1>
       <nuxt-content :document="page"/>
 
     </div>
@@ -11,7 +9,6 @@
 
     export default {
         async asyncData({ $content, params, error }) {
-            const blog = params.blog
             const slug = params.slug || "index";
             let page;
             page = await $content('blog', slug)
@@ -21,7 +18,7 @@
             });
             console.log(slug);
           return {
-              page, blog, slug
+              page, slug
           };
       
         },        
