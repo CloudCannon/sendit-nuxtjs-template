@@ -16,7 +16,6 @@
             .catch(err => {
             error({ statusCode: 404, message: "Page not found" });
             });
-            console.log(slug);
           return {
               page, slug
           };
