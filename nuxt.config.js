@@ -26,7 +26,11 @@ export default {
 
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // <link rel="shortcut icon" href="{{ site.favicon_icon }}" type="image/x-icon" />
+      // <link rel="icon" href="{{ site.favicon_image }}" type="image/x-icon" />
+      // <link rel="apple-touch-icon" href="{{ site.favicon_image }}">
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '@/static/favicon.ico'},
+      { rel: 'icon', type: 'image/x-icon', href: '@/static/favicon.ico' }
     ]
   },
 

@@ -10,13 +10,15 @@
                       <div class="inner-blog-details-meta">
                           <ul class="list-unstyled">
                             <li class="list-inline-item">
-                                <p>{{ page.date }}</p>
+                              <!-- 
+                              <p>{{  Intl.DateTimeFormat("en-GB", { dateStyle: 'full',}).format(new Date(this.page.date)) }}</p>
+                              -->
                             </li>
                             <li class="list-inline-item">
                                 <p><span> Written by: </span> {{ page.author }}</p>
                             </li>
                             <li class="list-inline-item">
-                                <p>{{ page.content }}</p>
+                                <p>{{ Math.floor((page.text.split(" ").length) / 183) }} minute read</p>
                             </li>
                                 <li class="list-inline-item" v-if="page.content != ''">
                                   <p>{{ page.text.split(" ").length }}<span> words</span></p>
@@ -24,13 +26,12 @@
                           </ul>
                       </div>
                     </div>
-                    <!--
                     <img
+                      v-if="page.featuredImg"
                       :src="page.featuredImg.image"
                       class="w-100 mb-xxl-11 mb-8"
                       :alt="page.featuredImg.image_alt"
                     />
-                    -->
                     <div style="max-width: 900px; margin: 0 auto">
                       <nuxt-content :document="page"/></div>
                 </article>
@@ -49,6 +50,7 @@
           </div>
           <div class="row">
             <!--
+              TODO: configure recent blog posts
               {% for blog in collections.blog reversed limit: 3%}
               <div class="col-lg-4 col-md-6">
                 <article class="blog-post">
@@ -92,8 +94,8 @@
               page, blog, slug
           };
       
-        },        
-
+        },      
+        
 
     };
 

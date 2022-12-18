@@ -1,5 +1,5 @@
 ---
-title: blog
+title: Resources for makers to learn, sell & grow
 description: "We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy."
 content_blocks:
   - _bookshop_name: home/hero
@@ -21,4 +21,3 @@ seo:
   open_graph_type: 
   no_index: false
 ---
-This is the blog landing 
