@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                <div class="works-content">
                   <h2>{{title}}</h2>
-                  {{description }}
+                  <p>{{description }}</p>
                   <a href="{{btn.link}}" class="btn btn-lg btn-white" target="_blank"> {{btn.text}} </a>
                </div>
             </div>
