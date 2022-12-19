@@ -4,7 +4,9 @@
          <div class="row">
             <div class="col-lg-4" v-for="item in block.pricing_tier">
                      <!-- TODO: -->
-               <div class="card pricing-item {% if item.is_active %} active {% endif %}">
+                     
+               <div class="card pricing-item"
+                     :class="{ active: item.highlight_tier }">
                   <h5 class="card-title">{{item.tier}}</h5>
                   <p class="card-text">{{item.description}}</p>
                   <div class="price" v-if="item.has_discount">
@@ -27,8 +29,11 @@
                   </div>
                   <div class="card-body">
                      <ul class="list-unstyled">
-                        <li class="{% if feature.is_active == false %} deactive {% endif %}" v-for="feature in item.features">
-                           <i class="ph-check {% if feature.is_active == false %} deactive {% endif %}"></i>
+                        <li v-for="feature in item.features"
+                           :class="{ deactive: (feature.active_feature === false)}">
+                           <i :class="{ deactive: (feature.is_active === false)}"
+                              class="ph-check">
+                           </i>
                            {{feature.item}}
                         </li>
                      </ul>

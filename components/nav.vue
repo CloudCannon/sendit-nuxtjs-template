@@ -84,13 +84,10 @@
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto mb-20 mb-lg-0">
-                        <!-- TODO: 
-                                                {% assign url = item.link %}
-
-                        -->
                         <li class="nav-item" v-for="item in nav.items">
                            <a
-                              class="nav-link {% if page.url == url%}active{% endif %}"
+                              class="nav-link"
+                              :class="{ active:(currentLink == item.link)}"
                               :href="item.link"
                               >{{ item.text }}</a
                            >
@@ -114,8 +111,13 @@ import navData from "../data/nav.json";
 export default {
   data() {
     return {
-      nav: navData,
+      nav: navData, 
+      currentLink: ''
     };
   },
+
+  mounted(){
+   this.currentLink = window.location.pathname;
+  }
 };
 </script>
