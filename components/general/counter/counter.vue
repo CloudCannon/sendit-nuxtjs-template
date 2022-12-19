@@ -1,5 +1,4 @@
 <template>    
-<!-- TODO: fix the if statement in class-->
    <section
       :class="classObject(block.alternative_style)"
       id="counter-up"
