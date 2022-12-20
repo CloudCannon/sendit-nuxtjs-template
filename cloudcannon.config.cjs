@@ -14,7 +14,7 @@ module.exports = {
         pages: {
             path: "content/",
             url: '/[slug]',
-            // 'output': true,
+            'output': true,
             // icon: 'wysiwyg',
             _enabled_editors: [
                 "visual"
@@ -29,7 +29,7 @@ module.exports = {
         },
         blog: {
             path: "content/blog/",
-            // 'output': true,
+            'output': true,
             // url: '/blog/[slug]',
             _enabled_editors: [
                 "content",
