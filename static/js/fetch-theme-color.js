@@ -1,6 +1,6 @@
 const fs = require('fs');
 // read theme color from _data/site.json
-fs.readFile('./site/_data/theme.json', 'utf8', function(err, dataFile){
+fs.readFile('./data/theme.json', 'utf8', function(err, dataFile){
     
     if(err){
         console.log(err);

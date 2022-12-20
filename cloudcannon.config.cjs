@@ -1,10 +1,10 @@
 module.exports = {
-    // paths: {
-    //     collections: 'content',
-    //     data: 'data',
-    //     static: 'dist',
-    //     uploads: 'static/images'
-    // },
+    paths: {
+        // collections: 'content',
+        // data: 'data',
+        static: 'dist',
+        uploads: 'static/images'
+    },
     collections_config: {
         data: {
             path: 'data/',
