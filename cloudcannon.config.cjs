@@ -12,8 +12,8 @@ module.exports = {
             disable_add_folder: true
         },
         pages: {
-            path: "content/",
-            url: '/[slug]',
+            // path: "content/",
+            // url: '/[slug]',
             'output': true,
             icon: 'wysiwyg',
             _enabled_editors: [
@@ -28,9 +28,9 @@ module.exports = {
             }
         },
         blog: {
-            path: "content/blog/",
+            // path: "content/blog/",
             // 'output': true,
-            url: '/blog/[slug]',
+            // url: '/blog/[slug]',
             _enabled_editors: [
                 "content",
                 "visual"
