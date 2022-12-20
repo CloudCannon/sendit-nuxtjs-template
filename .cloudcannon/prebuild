@@ -1,2 +1,1 @@
-npm run bookshop-sass:fetch-theme-color
-npm run bookshop-sass:build
+npm run prebuild:fetch-theme-color
