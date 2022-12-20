@@ -13,7 +13,7 @@ module.exports = {
         },
         pages: {
             path: "content/",
-            // url: '/[slug]',
+            url: '/[slug]',
             // 'output': true,
             // icon: 'wysiwyg',
             _enabled_editors: [
