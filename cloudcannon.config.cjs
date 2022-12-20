@@ -13,9 +13,9 @@ module.exports = {
         },
         pages: {
             path: "content/",
-            url: '/[slug]',
-            'output': true,
-            icon: 'wysiwyg',
+            // url: '/[slug]',
+            // 'output': true,
+            // icon: 'wysiwyg',
             _enabled_editors: [
                 "visual"
             ],
@@ -29,10 +29,11 @@ module.exports = {
         },
         blog: {
             path: "content/blog/",
-            'output': true,
-            url: '/blog/[slug]',
+            // 'output': true,
+            // url: '/blog/[slug]',
             _enabled_editors: [
                 "content",
+                "visual"
             ],
             schemas: {
                 default: {
