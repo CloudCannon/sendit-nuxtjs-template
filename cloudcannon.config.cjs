@@ -1,16 +1,16 @@
 module.exports = {
-    // paths: {
-    //     collections: 'content',
-    //     data: 'data',
-    //     static: 'public',
-    //     uploads: 'public/uploads'
-    // },
+    paths: {
+        collections: 'content',
+        data: 'data',
+        static: 'dist',
+        uploads: 'static/images'
+    },
     collections_config: {
-        // data: {
-        //     path: 'data',
-        //     disable_add: true,
-        //     disable_add_folder: true
-        // },
+        data: {
+            path: 'data/',
+            disable_add: true,
+            disable_add_folder: true
+        },
         pages: {
             path: "content/",
             url: '/[slug]',
@@ -19,28 +19,28 @@ module.exports = {
             _enabled_editors: [
                 "visual"
             ],
-            // schemas: {
-            //     page:
-            //     {
-            //         name: 'New Page',
-            //         path: "schemas/page.md"
-            //     }
-            // }
+            schemas: {
+                page:
+                {
+                    name: 'New Page',
+                    path: "schemas/page.md"
+                }
+            }
         },
-        // blog: {
-        //     path: "content/posts",
-        //     'output': true,
-        //     url: '/blog/[slug]',
-        //     _enabled_editors: [
-        //         "content",
-        //         "visual"
-        //     ],
-        //     schemas: {
-        //         default: {
-        //             path: 'schemas/post.md'
-        //         }
-        //     }
-        // }
+        blog: {
+            path: "content/posts",
+            'output': true,
+            url: '/blog/[slug]',
+            _enabled_editors: [
+                "content",
+                "visual"
+            ],
+            schemas: {
+                default: {
+                    path: 'schemas/post.md'
+                }
+            }
+        }
     },
     _inputs: {
         date: {
