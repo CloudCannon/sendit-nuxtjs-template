@@ -12,7 +12,8 @@ module.exports = {
             disable_add_folder: true
         },
         pages: {
-            path: "",
+            path: "content",
+            glob: ['content/*.md', ],
             url: '/[slug]',
             output: true,
             icon: 'wysiwyg',
