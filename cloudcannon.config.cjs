@@ -11,22 +11,22 @@ module.exports = {
             disable_add: true,
             disable_add_folder: true
         },
-        // pages: {
-        //     path: "content/",
-        //     url: '/[slug]',
-        //     output: true,
-        //     icon: 'wysiwyg',
-        //     _enabled_editors: [
-        //         "visual"
-        //     ],
-        //     schemas: {
-        //         page:
-        //         {
-        //             name: 'New Page',
-        //             path: "schemas/page.md"
-        //         }
-        //     }
-        // },
+        pages: {
+            path: "",
+            url: '/[slug]',
+            output: true,
+            icon: 'wysiwyg',
+            _enabled_editors: [
+                "visual"
+            ],
+            schemas: {
+                page:
+                {
+                    name: 'New Page',
+                    path: "schemas/page.md"
+                }
+            }
+        },
         blog: {
             path: "content/blog/",
             output: true,
