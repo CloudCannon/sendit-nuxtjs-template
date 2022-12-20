@@ -28,15 +28,15 @@ module.exports = {
             }
         },
         blog: {
-            path: "content/blog",
+            path: "content/blog/",
             'output': true,
             url: '/blog/[slug]',
             _enabled_editors: [
                 "content",
-                "visual"
             ],
             schemas: {
                 default: {
+                    name: 'New Blog Post',
                     path: 'schemas/post.md'
                 }
             }
