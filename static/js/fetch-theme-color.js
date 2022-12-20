@@ -12,7 +12,7 @@ fs.readFile('./data/theme.json', 'utf8', function(err, dataFile){
 
     // TODO: Check if dataFile.primary_theme_color is set
     // Open variables.scss and search/replace "$theme: ..." with color from data file
-    fs.readFile('./component-library/shared/styles/variables.scss', 'utf-8', function (err, scssFile) {
+    fs.readFile('./assets/style/_variables.scss', 'utf-8', function (err, scssFile) {
 
         if(err){
             console.log(err);
@@ -40,7 +40,7 @@ fs.readFile('./data/theme.json', 'utf8', function(err, dataFile){
         } 
 
         // Write result back to variables.scss
-        fs.writeFile('./component-library/shared/styles/variables.scss', replaced, 'utf-8', function (err) {
+        fs.writeFile('./assets/style/_variables.scss', replaced, 'utf-8', function (err) {
             if(err){
                 console.log(err);
             }
