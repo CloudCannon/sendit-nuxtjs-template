@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                <div class="works-content">
                   <h2>{{ block.title }}</h2>
-                  <p>{{ block.description }}</p>
+                  <p v-html="block.description"></p>
                   <a :href="block.button.link" class="btn btn-lg btn-white" target="_blank"> {{block.button.text}} </a>
                </div>
             </div>

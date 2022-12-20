@@ -6,7 +6,10 @@
          <div class="col-lg-6">
             <div class="hero-two-content">
                   <h1 class="mb-4">{{ block.title}}</h1>
-                  <div class="mb-7 w-xxl-80">{{ block.description }}</div>
+                  <div class="mb-7 w-xxl-80">
+                     <p v-html="block.description"></p>
+
+                  </div>
                <div class="">
                   <a :href="block.button.link" class="btn btn-primary btn-lg"> {{ block.button.text }} </a> 
                </div>

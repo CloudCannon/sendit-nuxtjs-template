@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                <div class="contact-hero-content">
                   <h1>{{ block.title }}</h1>
-                  {{ block.description }}
+                  <p v-html="block.description"></p>
                </div>
             </div>
          </div>

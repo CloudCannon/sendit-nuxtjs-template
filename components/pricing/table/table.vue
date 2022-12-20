@@ -2,9 +2,7 @@
    <section class="pricing pb-xxl-20 pb-lg-15 pb-md-5" :data-cms-bind="dataBinding">
       <div class="container">
          <div class="row">
-            <div class="col-lg-4" v-for="item in block.pricing_tier">
-                     <!-- TODO: -->
-                     
+            <div class="col-lg-4" v-for="item in block.pricing_tier">                     
                <div class="card pricing-item"
                      :class="{ active: item.highlight_tier }">
                   <h5 class="card-title">{{item.tier}}</h5>

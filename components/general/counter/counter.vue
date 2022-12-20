@@ -11,7 +11,7 @@
                   <h2>
                      {{ block.title }} <span>{{ block.title_suffix }}</span>
                   </h2>
-                  {{ block.description }}
+                  <p v-html="block.description"></p>
                </div>
             </div>
             <div class="col-12">

@@ -19,7 +19,7 @@
         <div class="col-lg-6">
           <div class="feature-item-content mb-xl-15 mb-md-10 mb-7 ps-xxl-8 ps-0">
             <h2>{{block.title}}</h2>
-            <p>{{block.description }}</p>
+            <p v-html="block.description"></p>
             <div class="Learn-more">
               <a :href="block.button.link" class="">
                 {{block.button.text}}
@@ -33,7 +33,7 @@
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="feature-item-content mb-xl-15 mb-md-10 mb-7 ps-xxl-8 ps-0">
             <h2 class="pe-xl-0">{{block.title}}</h2>
-            <p>{{block.description }}</p>
+            <p v-html="block.description"></p>
             <div class="Learn-more">
               <a :href="block.button.link" class="">
                 {{block.button.text}}

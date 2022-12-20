@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                <div class="feature-hero-content">
                   <h1 class="">{{ block.title}}</h1>
-                  <p>{{block.description }}</p>
+                  <p v-html="block.description"></p>
                   <div class="d-block mb-6">
                      <a :href="block.button.link" class="btn btn-primary btn-lg"> {{block.button.text}} </a>
                   </div>

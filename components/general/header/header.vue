@@ -3,13 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <!-- TODO: re add the if statement 
-          <div class="section-header @@disply"{% if no_top_pad %}style="padding-top:0;"{% endif %}>
-
-          -->
-          <div class="section-header @@disply">
+          <div class="section-header @@disply"
+              v-style="remove_top_padding ? 'padding-top: 0' : ''">
             <h2>{{ block.title }}<span>{{ block.title_suffix }}</span></h2>
-            <p>{{ block.description }}</p>
+            <p v-html="block.description"></p>
           </div>
         </div>
       </div>

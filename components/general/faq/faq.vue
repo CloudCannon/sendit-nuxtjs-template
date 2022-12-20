@@ -5,7 +5,7 @@
             <div class="col-lg-8 mx-auto">
                <div class="section-header">
                   <h2>{{block.title}} <span>{{block.title_suffix}}</span></h2>
-                  <p>{{block.description }}</p>
+                  <p v-html="block.description"></p>
                </div>
             </div>
          </div>

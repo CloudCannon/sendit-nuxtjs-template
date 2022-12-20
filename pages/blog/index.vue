@@ -25,14 +25,15 @@
                   </div>
                   <div class="blog-post-content">
 
-                     <!--
-                        TODO:
                      <div class="blog-post-tag @@category">
-                     {% for tag in blog.data.tags limit: 2 %}
-                        <a href="/tags/{{ tag }}/">{{ tag }}</a>
-                     {% endfor %}
+                        <!-- TODO: remove in line style -->
+                        <div style="display: inline-block"
+                        v-for="(tag, index) in blog.tags">
+                           <a :href="'/tags/'+ tag +'/'" v-if="index < 2">
+                                 {{ tag }}
+                           </a>
+                        </div>
                      </div>
-                  -->
                      <div class="blog-post-title">
                         <a :href="blog.slug" class="">{{blog.title}}</a>
                      </div>
@@ -120,7 +121,7 @@
         async asyncData({ $content, params, error }) {
             const slug = params.slug || "index";
             const blogPosts = await $content('blog') 
-            .only(['title', 'slug', 'thumbImg'])
+            .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
             .fetch()
             const page = await $content('blog', slug)

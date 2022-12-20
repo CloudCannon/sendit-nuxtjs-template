@@ -6,7 +6,7 @@
         <div class="col-xl-5 col-lg-10 mx-auto">
           <div class="about-hero-two-content position-relative">
             <h2>{{ block.title }}</h2>
-            <p>{{ block.description }}</p>
+            <p v-html="block.description"></p>
             <div
               class="scroll-down d-flex justify-content-center justify-content-xl-start"
             >
