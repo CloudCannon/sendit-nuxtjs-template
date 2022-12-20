@@ -1,7 +1,6 @@
 ---
 title: 
 permalink: 
-layout: base.liquid
 seo:
   page_description: 
   canonical_url: 

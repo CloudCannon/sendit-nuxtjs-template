@@ -28,7 +28,7 @@ module.exports = {
             }
         },
         blog: {
-            path: "content/posts",
+            path: "content/blog",
             'output': true,
             url: '/blog/[slug]',
             _enabled_editors: [
