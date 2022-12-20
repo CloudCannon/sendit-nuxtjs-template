@@ -29,7 +29,7 @@ module.exports = {
         },
         blog: {
             path: "content/blog/",
-            'output': true,
+            // 'output': true,
             // url: '/blog/[slug]',
             _enabled_editors: [
                 "content",
