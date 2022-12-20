@@ -1,6 +1,6 @@
 <template>    
    <section
-      :class="classObject(block.alternative_style)"
+      :class="classObject(block.alternate_style)"
       id="counter-up"
       :data-cms-bind="dataBinding"      
    >
