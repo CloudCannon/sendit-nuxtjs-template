@@ -15,7 +15,7 @@
    <section class="blog @@padding @@blog-two">
       <div class="container">
          <div class="row">
-         <div class="col-lg-4 col-md-6" v-for="blog in blog">
+         <div class="col-lg-4 col-md-6" v-for="blog in posts">
                <article class="blog-post">
                   <div class="blog-post-thumb">
                      <a :href="blog.slug">
@@ -40,75 +40,13 @@
                   </div>
                </article>
             </div>
-         <!--
-         {% assign variable = pagination.hrefs | length %}
-         {% if variable > 1 %}
-            <nav class="blog-pagination">
-               <ul class="pagination">
-               {% if pagination.href.previous %}
-                  <li class="page-item">
-                     <a class="page-link btn btn-secondary" href="{{pagination.href.previous}}">
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="20.657"
-                           height="11.314"
-                           viewBox="0 0 20.657 11.314"
-                           style="transform: scale(-1, 1)"
-                        >
-                           <g fill="#fff" data-name="Group 12">
-                              <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
-                              <path
-                                 d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z"
-                                 data-name="Rectangle 2401"
-                              ></path>
-                              <path
-                                 d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z"
-                                 data-name="Rectangle 2402"
-                              ></path>
-                           </g>
-                        </svg>
-                     </a>
-                  </li>
-               {% endif %}
-               {% for pageEntry in pagination.hrefs %}
-               <li class="page-item">
-                  <a
-                     class="page-link btn btn-secondary {% if page.url == pageEntry %}active{% endif %}"
-                     href="{{pageEntry}}"
-                     >{{forloop.index}}
-                  </a>
-               </li>
-               {% endfor %}
-                  {% if pagination.href.next %}
-                  <li class="page-item">
-                     <a class="page-link btn btn-secondary" href="{{ pagination.href.next }}">
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="20.657"
-                           height="11.314"
-                           viewBox="0 0 20.657 11.314"
-                        >
-                           <g fill="#fff" data-name="Group 12">
-                              <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
-                              <path
-                                 d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z"
-                                 data-name="Rectangle 2401"
-                              ></path>
-                              <path
-                                 d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z"
-                                 data-name="Rectangle 2402"
-                              ></path>
-                           </g>
-                        </svg>
-                     </a>
-                  </li>
-                  {% endif %} 
-               </ul>
-            </nav>
-         {% endif %}
-          -->
          </div>
       </div>
+      <section id="next" v-if="nextPage">
+      <nuxt-link to="/blog/page/2">
+         Next page
+      </nuxt-link>
+      </section>
    </section>      
    
    <nuxt-content :document="page"/>
@@ -123,6 +61,7 @@
             const blogPosts = await $content('blog') 
             .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
+            .limit(3)
             .fetch()
             const page = await $content('blog', slug)
             .fetch()
@@ -131,8 +70,11 @@
             });
             const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  })
 
+
+            const nextPage = blog.length === 2
+            const posts = nextPage ? blog.slice(0, -1) : blog
           return {
-              page, blog
+              page, blog, nextPage, posts
           };
       
         },        

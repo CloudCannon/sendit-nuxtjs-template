@@ -117,7 +117,7 @@ export default {
   },
 
   mounted(){
-   this.currentLink = window.location.pathname;
+      this.currentLink = window.location.pathname;
   }
 };
 </script>

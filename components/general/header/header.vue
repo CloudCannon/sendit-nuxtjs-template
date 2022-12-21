@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="section-header @@disply"
-              v-style="remove_top_padding ? 'padding-top: 0' : ''">
+              v-style="block.remove_top_padding ? 'padding-top: 0' : ''">
             <h2>{{ block.title }}<span>{{ block.title_suffix }}</span></h2>
             <p v-html="block.description"></p>
           </div>
