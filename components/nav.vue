@@ -5,9 +5,9 @@
             id="mainnavigationBar"
          >
             <div class="container-fluid">
-               <a class="navbar-brand" href="/">
+               <NuxtLink to="/" class="navbar-brand" exact>
                   <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" />
-               </a>
+               </NuxtLink>
                <button
                   class="navbar-toggler"
                   type="button"
@@ -85,20 +85,21 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto mb-20 mb-lg-0">
                         <li class="nav-item" v-for="item in nav.items">
-                           <a
+                           <NuxtLink
                               class="nav-link"
-                              :class="{ active:(currentLink == item.link)}"
-                              :href="item.link"
-                              >{{ item.text }}</a
-                           >
+                              :to="item.link"
+                              exact
+                              >{{ item.text }}
+                           </NuxtLink>
+                           
                         </li>
                   </ul>
                </div>
                <div class="d-none d-lg-block">
                   <div class="nav-item">
-                     <a :href="nav.button.link" class="btn btn-sm btn-links">{{
-                        nav.button.text
-                     }}</a>
+                     <NuxtLink :to="nav.button.link" class="btn btn-sm btn-links" exact>
+                        {{ nav.button.text }}
+                     </NuxtLink>
                   </div>
                </div>
             </div>
@@ -112,12 +113,8 @@ export default {
   data() {
     return {
       nav: navData, 
-      currentLink: ''
     };
   },
 
-  mounted(){
-      this.currentLink = window.location.pathname;
-  }
 };
 </script>

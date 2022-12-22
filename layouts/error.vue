@@ -1,12 +1,21 @@
 <template>
-    <div class="container">
-      <h1 v-if="error.statusCode === 404">Page not found</h1>
-      <h1 v-else>An error occurred</h1>
-      <nuxt-link to="/">Home page</nuxt-link>
+    <div >
+      <GeneralError
+       :block="{ description: 'Something is wrong here!', image: '/images/404/error.png', image_alt: 'Error illustration' }">
+      </GeneralError>
     </div>
   </template>
   <script>
   export default {
     props: ['error'],
+
+    data() {
+      return {
+        block: { "description": "Something is wrong here!", "image": "~/assets/images/404/error.png", "image_alt": "Error illustration" },
+      };
+    }
   }
   </script>
+
+
+

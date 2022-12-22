@@ -16,21 +16,24 @@
 <script>
     export default {
         async asyncData({ $content, params, error }) {
+          let formattedPage = null;
           const slug = params.slug || "index";
           const page = await $content(slug)
               .fetch()
               .catch(err => {
               error({ statusCode: 404, message: "Page not found" });
               });
-          let formattedPage = null;
-          if(page.content_blocks){    
-            formattedPage = page;
-            formattedPage.content_blocks.forEach(function (item) {
-              item._bookshop_name = item._bookshop_name.replace(/[^a-zA-Z0-9 ]/g, ' ');
-              item._bookshop_name = item._bookshop_name.replace(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
-              item._bookshop_name = item._bookshop_name.replace(' ', '');
-            });
-          }
+          if (!(page)) {
+            error({ statusCode: 404, message: "Page not found" });
+          }              
+          else if(page.content_blocks && page){    
+              formattedPage = page;
+              formattedPage.content_blocks.forEach(function (item) {
+                item._bookshop_name = item._bookshop_name.replace(/[^a-zA-Z0-9 ]/g, ' ');
+                item._bookshop_name = item._bookshop_name.replace(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
+                item._bookshop_name = item._bookshop_name.replace(' ', '');
+              });
+        }
 
           return {
               page, formattedPage, error
@@ -102,7 +105,7 @@
         },
         
         beforeDestroy() {
-          // this.stopCloudCannonChanges();
+          this.stopCloudCannonChanges();
         }
 
 
