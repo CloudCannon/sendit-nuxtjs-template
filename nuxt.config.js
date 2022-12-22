@@ -57,7 +57,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
-    '@nuxt/components'
+    '@nuxt/components',
+    '@nuxt/image',
+
   ],
   generate: {
     async routes () {
@@ -66,6 +68,12 @@ export default {
       return files.map(file => file.path === '/index' ? '/' : file.path)
     }
   },
+
+  image: {
+    // Generate images to `/_nuxt/image/file.png`
+    // staticFilename: '[publicPath]/images/[name]-[hash][ext]'
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

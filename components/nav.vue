@@ -6,7 +6,7 @@
          >
             <div class="container-fluid">
                <a class="navbar-brand" href="/">
-                  <img :src="nav.logo" alt="Nav-Logo" />
+                  <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" />
                </a>
                <button
                   class="navbar-toggler"

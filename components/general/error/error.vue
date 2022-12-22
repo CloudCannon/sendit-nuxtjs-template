@@ -6,10 +6,10 @@
           <div class="error-content text-center">
             <div class="logo mb-7">
               <a class="navbar-brand" href="/">
-                <img src="~/assets/images/logo.svg" alt="" class="" />
+                <nuxt-img format="webp" src="~/assets/images/logo.svg" alt="" class="" />
               </a>
             </div>
-            <img :src="block.image_path" alt="error-image" />
+            <nuxt-img format="webp" :src="block.image_path" alt="error-image" />
             <h3 class="my-5">{{ block.description }}</h3>
             <a href="/" class="btn btn-lg btn-primary"> Try Again </a>
           </div>

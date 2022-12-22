@@ -19,7 +19,7 @@
                <article class="blog-post">
                   <div class="blog-post-thumb">
                      <a :href="blog.slug">
-                        <img v-if="blog.thumbImg"
+                        <nuxt-img format="svg" v-if="blog.thumbImg"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
                      </a>
                   </div>

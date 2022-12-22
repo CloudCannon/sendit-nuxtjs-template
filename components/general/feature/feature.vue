@@ -5,7 +5,7 @@
         <div class="col-lg-6">
           <div class="feature-item-banner mb-sm-8 mb-lg-10 mb-xxl-15 mb-7">
             <div class="card-image">
-              <img :src="block.image" alt="card-images" loading="lazy" />
+              <nuxt-img format="webp" :src="block.image" alt="card-images" loading="lazy" />
             </div>
             <div class="effect-one">
               <img
@@ -45,7 +45,7 @@
         <div class="col-lg-6 order-1 order-lg-2">
           <div class="feature-item-banner mb-sm-8 mb-lg-10 mb-xxl-15 mb-7">
             <div class="card-image">
-              <img :src="block.image" alt="card-images" loading="lazy" />
+              <nuxt-img format="webp" :src="block.image" alt="card-images" loading="lazy" />
             </div>
             <div class="effect-two">
               <img

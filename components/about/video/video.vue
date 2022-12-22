@@ -11,9 +11,9 @@
             </div>
             <div class="col-lg-6">
                <div class="works-banner">
-                  <img :src="block.video.image" class="w-100" alt="banner-image" loading="lazy" style="border-radius:20px"/>
+                  <nuxt-img format="webp" :src="block.video.image" class="w-100" alt="banner-image" loading="lazy" style="border-radius:20px"/>
                   <div class="effect">
-                     <img src="~/assets/images/works/effect.png" alt="effect" loading="lazy" />
+                     <nuxt-img format="webp" src="~/assets/images/works/effect.png" alt="effect" loading="lazy" />
                   </div>
                   <div class="video-iframe d-flex align-items-center justify-content-center">
                      <div class="video-icon me-sm-9 me-8">
