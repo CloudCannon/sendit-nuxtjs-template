@@ -129,7 +129,6 @@ export default {
     const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
     const posts = nextPage ? blog.slice(0, -1) : blog;
     const numberOfPosts = allPosts.length;
-    console.log(Math.round(numberOfPosts/blogLanding.pagination.size));
     return {
       blogLanding, blog, nextPage, posts, numberOfPosts, params
     };
@@ -144,7 +143,6 @@ export default {
       else{
         previousURL = '/blog/page/' + (index-1);
       }
-      console.log(previousURL);
       return previousURL;
     }
   }
