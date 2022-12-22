@@ -46,7 +46,7 @@
                   <!-- TODO: -->
          <nav class="blog-pagination">
                <ul class="pagination">
-               <li class="page-item" v-for="index in params.pagination.size">
+               <li class="page-item" v-for="index in (Math.round(numberOfPosts/page.pagination.size ))">
                   <a
                      class="page-link btn btn-secondary"
                      :class="{active: index === 1}"
@@ -55,7 +55,7 @@
                   </a>
                </li>
                   <li class="page-item">
-                     <a class="page-link btn btn-secondary" :href="'blog/page/2'">
+                     <a class="page-link btn btn-secondary" :href="'/blog/page/2'">
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            width="20.657"
@@ -90,25 +90,23 @@
     export default {
         async asyncData({ $content, params, error }) {
             const slug = params.slug || "index";
-            const blogPosts = await $content('blog') 
-            .only(['title', 'slug', 'thumbImg', 'tags'])
-            .sortBy('createdAt', 'asc')
-            .limit(params.pagination.size)
-            .fetch()
             const page = await $content('blog', slug)
             .fetch()
             .catch(err => {
             error({ statusCode: 404, message: "Page not found" });
             });
+            const blogPosts = await $content('blog') 
+            .only(['title', 'slug', 'thumbImg', 'tags'])
+            .sortBy('createdAt', 'asc')
+            .limit(page.pagination.size + 1)
+            .fetch()
             const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  });
-
             const allPosts = await $content('blog').only(['title']).fetch();
-
-            const nextPage = allPosts.length > params.pagination.size;
-            console.log(nextPage);
+            const nextPage = allPosts.length > page.pagination.size;
+            const numberOfPosts = allPosts.length;
 
           return {
-              page, blog, nextPage
+              page, blog, nextPage, numberOfPosts
           };
       
         },        
