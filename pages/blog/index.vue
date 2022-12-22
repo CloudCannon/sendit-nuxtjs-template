@@ -26,8 +26,7 @@
                   <div class="blog-post-content">
 
                      <div class="blog-post-tag @@category">
-                        <!-- TODO: remove in line style -->
-                        <div style="display: inline-block"
+                        <div
                         v-for="(tag, index) in blog.tags">
                            <a :href="'/tags/'+ tag +'/'" v-if="index < 2">
                                  {{ tag }}
@@ -43,7 +42,6 @@
          </div>
       </div>
       <section id="next" v-if="nextPage">
-                  <!-- TODO: -->
          <nav class="blog-pagination">
                <ul class="pagination">
                <li class="page-item" v-for="index in (Math.round(numberOfPosts/page.pagination.size ))">

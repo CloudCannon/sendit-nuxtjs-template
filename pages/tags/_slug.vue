@@ -122,7 +122,7 @@ export default {
     .skip((params.number -1 ) * blogLanding.pagination.size)
     .fetch()
 
-    const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  })
+    const blog = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.slug) })
     const allPosts = await $content('blog').only(['title']).fetch();
     const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
     const posts = nextPage ? blog.slice(0, -1) : blog;

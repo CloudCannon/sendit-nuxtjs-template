@@ -32,6 +32,7 @@
                       class="w-100 mb-xxl-11 mb-8"
                       :alt="page.featuredImg.image_alt"
                     />
+                    <!-- TODO: check if this is needed-->
                     <div style="max-width: 900px; margin: 0 auto">
                       <nuxt-content :document="page"/></div>
                 </article>

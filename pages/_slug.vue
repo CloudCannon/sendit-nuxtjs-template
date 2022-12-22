@@ -33,7 +33,7 @@
           }
 
           return {
-              page, formattedPage
+              page, formattedPage, error
           };
       
         },
