@@ -4,11 +4,6 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="error-content text-center">
-            <div class="logo mb-7">
-              <a class="navbar-brand" href="/">
-                <img src="~/assets/images/logo.svg" alt="" class="" />
-              </a>
-            </div>
             <nuxt-img format="webp" :src="block.image" alt="error-image" />
             <h3 class="my-5">{{ block.description }}</h3>
             <a href="/" class="btn btn-lg btn-primary"> Try Again </a>
