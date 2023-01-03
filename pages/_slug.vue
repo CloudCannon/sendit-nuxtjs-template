@@ -29,9 +29,9 @@
           else if(page.content_blocks && page){    
               formattedPage = page;
               formattedPage.content_blocks.forEach(function (item) {
-                item._bookshop_name = item._bookshop_name.replace(/[^a-zA-Z0-9 ]/g, ' ');
-                item._bookshop_name = item._bookshop_name.replace(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
-                item._bookshop_name = item._bookshop_name.replace(' ', '');
+                item._bookshop_name = item._bookshop_name.replaceAll(/[^a-zA-Z0-9 ]/g, ' ');
+                item._bookshop_name = item._bookshop_name.replaceAll(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
+                item._bookshop_name = item._bookshop_name.replaceAll(' ', '');
               });
         }
 
