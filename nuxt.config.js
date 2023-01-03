@@ -59,6 +59,7 @@ export default {
     '@nuxt/content',
     '@nuxt/components',
     '@nuxt/image',
+    '@nuxtjs/sitemap'
 
   ],
   generate: {
