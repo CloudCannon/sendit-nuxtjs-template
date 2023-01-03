@@ -18,10 +18,10 @@
          <div class="col-lg-4 col-md-6" v-for="blog in posts">
                <article class="blog-post">
                   <div class="blog-post-thumb">
-                     <a :href="blog.slug">
+                     <NuxtLink :to="'/blog/' + blog.slug">
                         <nuxt-img format="webp" v-if="blog.thumbImg"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
-                     </a>
+                     </NuxtLink>
                   </div>
                   <div class="blog-post-content">
 
@@ -34,7 +34,7 @@
                         </div>
                      </div>
                      <div class="blog-post-title">
-                        <a :href="blog.slug" class="">{{blog.title}}</a>
+                        <NuxtLink :to="'/blog/' + blog.slug">{{blog.title}}</NuxtLink>
                      </div>
                   </div>
                </article>
@@ -121,15 +121,21 @@ export default {
     .limit(blogLanding.pagination.size)
     .skip((params.number -1 ) * blogLanding.pagination.size)
     .fetch()
-
+ 
     const blog = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.slug) })
-    const allPosts = await $content('blog').only(['title']).fetch();
-    const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
-    const posts = nextPage ? blog.slice(0, -1) : blog;
-    const numberOfPosts = allPosts.length;
-    return {
-      blogLanding, blog, nextPage, posts, numberOfPosts, params
-    };
+
+    if (blog.length < 1) {
+            error({ statusCode: 404, message: "Page not found" });
+      }  
+   else{
+      const allPosts = await $content('blog').only(['title']).fetch();
+      const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
+      const posts = nextPage ? blog.slice(0, -1) : blog;
+      const numberOfPosts = allPosts.length;
+      return {
+         blogLanding, blog, nextPage, posts, numberOfPosts, params
+      };
+   }  
   },
 
   methods: {
