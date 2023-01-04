@@ -57,7 +57,7 @@
                            :aria-labelledby="'heading'+(index + 1)"
                            data-bs-parent="#accordionExample"
                         >
-                           <div class="accordion-body">{{item.description}}</div>
+                           <div class="accordion-body" v-html="item.description"></div>
                         </div>
                      </div>
                   </template>

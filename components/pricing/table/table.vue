@@ -6,7 +6,7 @@
                <div class="card pricing-item"
                      :class="{ active: item.highlight_tier }">
                   <h5 class="card-title">{{item.tier}}</h5>
-                  <p class="card-text">{{item.description}}</p>
+                  <p class="card-text" v-html="item.description"></p>
                   <div class="price" v-if="item.has_discount">
                      <p class="pricingtable">${{item.discount_price}}</p>
                      <div class="discount">

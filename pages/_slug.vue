@@ -25,6 +25,7 @@
               .catch(err => {
               error({ statusCode: 404, message: "Page not found" });
               });
+
           if (!(page)) {
             error({ statusCode: 404, message: "Page not found" });
           }              
@@ -34,12 +35,14 @@
                 item._bookshop_name = item._bookshop_name.replaceAll(/[^a-zA-Z0-9 ]/g, ' ');
                 item._bookshop_name = item._bookshop_name.replaceAll(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
                 item._bookshop_name = item._bookshop_name.replaceAll(' ', '');
-              });
+          });
+          return {
+            page, formattedPage, error
+            };
+
         }          
         
-        return {
-              page, formattedPage, error
-          };
+
       
         },
 
@@ -152,14 +155,15 @@
               } else {
                 onLiveEditorLoad(window.CloudCannon, callback);
               }
-
-              const listener = async (e) => {
-                const { CloudCannon } = e.detail;
-                const latestValue = await CloudCannon.value();
-                callback(latestValue);
-              };
-              document.addEventListener('cloudcannon:update', listener);
-              this.listeners.push(listener);
+              if(window.CloudCannon){
+                const listener = async (e) => {
+                  const { CloudCannon } = e.detail;
+                  const latestValue = await CloudCannon.value();
+                  callback(latestValue);
+                };
+                document.addEventListener('cloudcannon:update', listener);
+                this.listeners.push(listener);
+              }
             }
 
             onCloudCannonChanges((newProps) => (
