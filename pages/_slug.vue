@@ -14,6 +14,8 @@
     </div>
   </template>
 <script>
+  import siteData from '../data/site.json';
+
     export default {
         async asyncData({ $content, params, error }) {
           let formattedPage = null;
@@ -47,6 +49,91 @@
         }
       },
 
+      head() {
+        let metaData = [];
+        let pageDescription = siteData.description;
+        let cannonical_url = '';
+
+        if(this.page.seo.page_description){
+          pageDescription = this.page.seo.page_description;
+        }
+        
+        if(this.page.seo.canonical_url){
+          cannonical_url = siteData.BaseURL + this.page.seo.canonical_url;
+        }
+
+        if(this.page.slug == '/'){
+          metaData.push({name: "og:title", content: siteData.site_title});
+          metaData.push({property: "og:type", content: "website"});
+          metaData.push({name: "twitter:creator", content: siteData.twitter_site});
+          metaData.push({name: "twitter:title", content: siteData.site_title});
+          if(siteData.twitter_image){
+            metaData.push({name: "twitter:image", content: siteData.twitter_image});
+          }
+          else{
+            metaData.push({name: "twitter:image", content: siteData.image});
+          }
+        }
+        else{
+          metaData.push({name: "og:title", content: this.page.title});
+          metaData.push({name: "twitter:title", content: this.page.title});
+          if(this.page.seo.open_graph_type){
+            metaData.push({name: "og:type", content: this.page.seo.open_graph_type});
+          }
+          else{
+            metaData.push({name: "og:type", content: "website"});
+          }
+
+          if(this.page.seo.featured_image){
+            metaData.push({name: "og:image", content: this.page.seo.featured_image});
+            metaData.push({name: "twitter:image", content: this.page.seo.featured_image});
+          }
+          else{
+            metaData.push({name: "og:image", content: siteData.image});
+            if(siteData.twitter_image){
+                metaData.push({name: "twitter:image", content: siteData.twitter_image});
+            }
+            else{
+              metaData.push({name: "twitter:image", content: siteData.image});
+            }
+          }
+      
+          if(this.page.seo.author_twitter_handle){
+            metaData.push({name: "twitter:creator", content: this.page.seo.author_twitter_handle});
+          }
+          else{
+            metaData.push({name: "twitter:creator", content: siteData.twitter_site});
+
+          }
+        }
+
+        // Add robots no index
+        if(this.page.seo.no_index){
+          metaData.push({name: "robots", content: "noindex"});
+          metaData.push({name: "googlebot", content: "noindex"});
+        }
+        // Page description for SEO
+        metaData.push({description: pageDescription});
+        metaData.push({"og:description": pageDescription});
+
+        // Meta tags for open graph and twitter
+        // TODO: check if this content is correct
+        metaData.push({name: "twitter:card", content: "summary_large_image" });
+        metaData.push({name: "twitter:site", content: siteData.twitter_site });
+
+        return {
+          title: `${this.page.title} | ${siteData.site_title}`,
+          meta: metaData,
+          link: [
+          {
+            hid: 'canonical',
+            rel: 'canonical',
+            href: cannonical_url.length > 0 ? cannonical_url : `${siteData.BaseURL}/${this.$route.params.slug}`,
+          }
+        ]
+
+        }
+      },
         mounted(){
           if (process.browser){
             this.listeners = [];
