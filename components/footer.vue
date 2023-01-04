@@ -8,11 +8,9 @@
                         <NuxtLink to="/" class="">
                            <nuxt-img format="webp" :src="footer.logo" alt="logo" />
                         </NuxtLink>
-                        <!-- TODO: 
-                        <p class="">
-                           Copyright {% year %} {{ footer.copyright }}
+                        <p class="" v-text="`Copyright ${currentDate.getFullYear()} ${footer.copyright}`">
+                           
                         </p>
-                    -->
                      </div>
                      <div class="social-icon">
                         <ul class="list-unstyled">
@@ -46,6 +44,7 @@ export default {
   data() {
     return {
       footer: footerData,
+      currentDate: new Date,
     };
   },
 };
