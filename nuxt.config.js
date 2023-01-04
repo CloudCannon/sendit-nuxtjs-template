@@ -57,6 +57,7 @@ export default {
     '@nuxt/components',
     '@nuxt/image',
     '@nuxtjs/sitemap',
+    'nuxt-purgecss',
   ],
   generate: {
     async routes () {
@@ -64,6 +65,9 @@ export default {
       const files = await $content({ deep: true }).only(['path']).fetch()
       return files.map(file => file.path === '/index' ? '/' : file.path)
     }
+  },
+  purgecss: {
+    enabled: true, // Always enable purgecss
   },
 
   image: {
