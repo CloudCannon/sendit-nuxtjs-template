@@ -35,9 +35,9 @@
                 item._bookshop_name = item._bookshop_name.replaceAll(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase());
                 item._bookshop_name = item._bookshop_name.replaceAll(' ', '');
               });
-        }
-
-          return {
+        }          
+        
+        return {
               page, formattedPage, error
           };
       
@@ -53,16 +53,9 @@
         let metaData = [];
         let pageDescription = siteData.description;
         let cannonical_url = '';
-
-        if(this.page.seo.page_description){
-          pageDescription = this.page.seo.page_description;
-        }
         
-        if(this.page.seo.canonical_url){
-          cannonical_url = siteData.BaseURL + this.page.seo.canonical_url;
-        }
 
-        if(this.page.slug == '/'){
+        if(this.page.slug == '/' || this.page.slug == 'index'){
           metaData.push({name: "og:title", content: siteData.site_title});
           metaData.push({property: "og:type", content: "website"});
           metaData.push({name: "twitter:creator", content: siteData.twitter_site});
@@ -77,6 +70,19 @@
         else{
           metaData.push({name: "og:title", content: this.page.title});
           metaData.push({name: "twitter:title", content: this.page.title});
+
+          if(this.page.seo.canonical_url){
+          cannonical_url = siteData.BaseURL + this.page.seo.canonical_url;
+          }
+          if(this.page.seo.page_description){
+            pageDescription = this.page.seo.page_description;
+          }
+
+          // Add robots no index
+          if(this.page.seo.no_index){
+            metaData.push({name: "robots", content: "noindex"});
+            metaData.push({name: "googlebot", content: "noindex"});
+          }
           if(this.page.seo.open_graph_type){
             metaData.push({name: "og:type", content: this.page.seo.open_graph_type});
           }
@@ -105,12 +111,6 @@
             metaData.push({name: "twitter:creator", content: siteData.twitter_site});
 
           }
-        }
-
-        // Add robots no index
-        if(this.page.seo.no_index){
-          metaData.push({name: "robots", content: "noindex"});
-          metaData.push({name: "googlebot", content: "noindex"});
         }
         // Page description for SEO
         metaData.push({description: pageDescription});

@@ -41,10 +41,10 @@
             </div>
          </div>
       </div>
-      <section id="next" v-if="nextPage">
+      <section id="next">
          <nav class="blog-pagination">
                <ul class="pagination">
-                  <li class="page-item" v-if="(params.number - 1) > 1 ">
+                  <li class="page-item" v-if="(params.number - 1) >= 1 ">
                      <a class="page-link btn btn-secondary" 
                      :href="previousButtonLink(params.number)"
                      >
@@ -77,7 +77,7 @@
                      >{{ index}}
                   </a>
                </li>
-                  <li class="page-item">
+                  <li class="page-item" v-if="nextPage">
                     <a class="page-link btn btn-secondary" :href="'/blog/page/' + (parseInt(params.number) + 1)">
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
@@ -110,23 +110,33 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
+   let skipNumber = 0;
     const blogLanding = await $content('blog', 'index')
     .fetch()
     .catch(err => {
     error({ statusCode: 404, message: "Page not found" });
     });
+
+    if(!(params.number - 1 == 0)){
+      skipNumber = (params.number - 1 ) * blogLanding.pagination.size;
+   }
+
     const blogPosts = await $content('blog') 
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
-    .limit(blogLanding.pagination.size)
-    .skip((params.number -1 ) * blogLanding.pagination.size)
-    .fetch()
+    .limit(blogLanding.pagination.size + 1)
+    .skip(skipNumber)
+    .fetch() 
 
     const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  })
     const allPosts = await $content('blog').only(['title']).fetch();
-    const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
-    const posts = nextPage ? blog.slice(0, -1) : blog;
-    const numberOfPosts = allPosts.length;
+   const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
+    const numberOfPosts = blogPosts.length;
+    const posts = blog;
+
+    if(posts.length < 1){
+      error({ statusCode: 404, message: "Page not found" });
+    }
     return {
       blogLanding, blog, nextPage, posts, numberOfPosts, params
     };
