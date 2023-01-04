@@ -10,12 +10,10 @@
                       <div class="inner-blog-details-meta">
                           <ul class="list-unstyled">
                             <li class="list-inline-item">
-                              <!-- 
-                              <p>{{  Intl.DateTimeFormat("en-GB", { dateStyle: 'full',}).format(new Date(this.page.date)) }}</p>
-                              -->
+                              <p>{{ blogDate }}</p> 
                             </li>
                             <li class="list-inline-item">
-                                <p><span> Written by: </span> {{ page.author }}</p>
+                                <p><span> Written by: &nbsp;</span>{{ page.author }}</p>
                             </li>
                             <li class="list-inline-item">
                                 <p>{{ Math.floor((page.text.split(" ").length) / 183) }} minute read</p>
@@ -76,6 +74,7 @@
   </template>
 <script>
   import siteData from '../../data/site.json';
+  import { DateTime } from 'luxon';
 
     export default {
         async asyncData({ $content, params, error }) {
@@ -90,9 +89,9 @@
             .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
             .fetch()
-
+            let blogDate = DateTime.fromISO(page.date, 'string').toLocaleString(DateTime.DATE_FULL);
           return {
-              page, blog, slug, allBlogPosts
+              page, blog, slug, allBlogPosts, blogDate
           };
       
         },

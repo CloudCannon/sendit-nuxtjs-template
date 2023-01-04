@@ -16,8 +16,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
     ],
     script: [
       { src: '/jQuery/jquery.min.js', body: true },
@@ -28,9 +26,6 @@ export default {
 
     ],
     link: [
-      // <link rel="shortcut icon" href="{{ site.favicon_icon }}" type="image/x-icon" />
-      // <link rel="icon" href="{{ site.favicon_image }}" type="image/x-icon" />
-      // <link rel="apple-touch-icon" href="{{ site.favicon_image }}">
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -61,8 +56,7 @@ export default {
     '@nuxt/content',
     '@nuxt/components',
     '@nuxt/image',
-    '@nuxtjs/sitemap'
-
+    '@nuxtjs/sitemap',
   ],
   generate: {
     async routes () {
