@@ -1,3 +1,5 @@
+import siteData from './data/site.json';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -91,6 +93,10 @@ export default {
         useShortDoctype: true
         }
     }
+  },
+
+  sitemap: {
+    hostname: siteData.BaseURL,
   }
 
   
