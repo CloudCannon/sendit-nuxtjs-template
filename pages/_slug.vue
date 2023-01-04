@@ -37,7 +37,7 @@
                 item._bookshop_name = item._bookshop_name.replaceAll(' ', '');
           });
           return {
-            page, formattedPage, error
+              page, formattedPage, error
             };
 
         }          
@@ -155,15 +155,14 @@
               } else {
                 onLiveEditorLoad(window.CloudCannon, callback);
               }
-              if(window.CloudCannon){
-                const listener = async (e) => {
-                  const { CloudCannon } = e.detail;
-                  const latestValue = await CloudCannon.value();
-                  callback(latestValue);
-                };
-                document.addEventListener('cloudcannon:update', listener);
-                this.listeners.push(listener);
-              }
+
+              const listener = async (e) => {
+                const { CloudCannon } = e.detail;
+                const latestValue = await CloudCannon.value();
+                callback(latestValue);
+              };
+              document.addEventListener('cloudcannon:update', listener);
+              this.listeners.push(listener);
             }
 
             onCloudCannonChanges((newProps) => (
