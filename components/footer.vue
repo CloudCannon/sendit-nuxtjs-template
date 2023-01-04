@@ -15,8 +15,7 @@
                      <div class="social-icon">
                         <ul class="list-unstyled">
                            <li v-for="item in footer.social"> 
-                              <NuxtLink :to="item.link" v-if="item.link !== '/sitemap.xml'"> <i :class="item.icon" aria-hidden="true"></i><span class="visually-hidden">{{ item.icon_alt }}</span></NuxtLink>
-                              <a :href="item.link" v-else> <i :class="item.icon" aria-hidden="true"></i><span class="visually-hidden">{{ item.icon_alt }}</span></a>
+                              <a :href="item.link"> <i :class="item.icon" aria-hidden="true"></i><span class="visually-hidden">{{ item.icon_alt }}</span></a>
 
                            </li>
                         </ul>
@@ -27,7 +26,9 @@
                         <h3>{{ item.title }}</h3>
                         <ul class="list-unstyled">
                            <li v-for="link in item.links">
-                              <NuxtLink :to="link.link">{{ link.text }}</NuxtLink>
+                              <NuxtLink :to="link.link" v-if="link.link !== '/sitemap.xml'">{{ link.text }}</NuxtLink>
+                              <a :href="link.link" v-else>{{ link.text }}</a>
+
                            </li>
                         </ul>
                      </div>
