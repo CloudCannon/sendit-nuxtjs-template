@@ -131,7 +131,7 @@ export default {
     const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  })
     const allPosts = await $content('blog').only(['title']).fetch();
    const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
-    const numberOfPosts = blogPosts.length;
+    const numberOfPosts = allPosts.length;
     const posts = blog;
 
     if(posts.length < 1){
