@@ -1,6 +1,6 @@
 ---
-title: Feature
-permalink: /feature/
+title: Features
+permalink: /features/
 seo:
   page_description: 
   canonical_url: 

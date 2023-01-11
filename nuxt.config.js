@@ -67,7 +67,7 @@ export default {
     }
   },
   purgecss: {
-    enabled: true, // Always enable purgecss
+    enabled: false, // Always enable purgecss
   },
 
   image: {
