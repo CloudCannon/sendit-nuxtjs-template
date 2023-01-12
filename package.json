@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@nuxt/image": "^0.7.1",
-    "nuxt-purgecss": "^1.0.0",
     "sass": "^1.56.1",
     "sass-loader": "^10.4.1"
   }
