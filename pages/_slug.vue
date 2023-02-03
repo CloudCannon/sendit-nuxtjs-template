@@ -140,7 +140,7 @@
         mounted(){
           if (process.browser){
             this.listeners = [];
-
+            let scope = this;
             async function onLiveEditorLoad(CloudCannon, callback) {
               CloudCannon.enableEvents();
               const latestValue = await CloudCannon.value();
@@ -162,7 +162,7 @@
                 callback(latestValue);
               };
               document.addEventListener('cloudcannon:update', listener);
-              this.listeners.push(listener);
+              scope.listeners.push(listener);
             }
 
             onCloudCannonChanges((newProps) => (
@@ -174,11 +174,14 @@
 
         methods: {
         async stopCloudCannonChanges() {
-            for (let i = 0; i < this.listeners.length; i++) {
-              const listener = this.listeners[i];
-              document.removeEventListener('cloudcannon:update', listener);
+            if(listeners.length > 0){
+              
+              for (let i = 0; i < this.listeners.length; i++) {
+                const listener = this.listeners[i];
+                document.removeEventListener('cloudcannon:update', listener);
+              }
+              this.listeners = [];
             }
-            this.listeners = [];
           },           
 
           formatBookshopName(){
