@@ -18,10 +18,10 @@
          <div class="col-lg-4 col-md-6" v-for="blog in posts">
                <article class="blog-post">
                   <div class="blog-post-thumb">
-                     <a :href="blog.slug">
+                     <NuxtLink :to="'/blog/' + blog.slug">
                         <nuxt-img format="webp" v-if="blog.thumbImg"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
-                     </a>
+                     </NuxtLink>
                   </div>
                   <div class="blog-post-content">
 
