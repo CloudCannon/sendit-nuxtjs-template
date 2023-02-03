@@ -173,14 +173,14 @@
         },
 
         methods: {
-        async stopCloudCannonChanges() {
-            if(listeners.length > 0){
+        async stopCloudCannonChanges(scope) {
+            if(scope.listeners.length > 0){
               
-              for (let i = 0; i < this.listeners.length; i++) {
-                const listener = this.listeners[i];
+              for (let i = 0; i < scope.listeners.length; i++) {
+                const listener = scope.listeners[i];
                 document.removeEventListener('cloudcannon:update', listener);
               }
-              this.listeners = [];
+              scope.listeners = [];
             }
           },           
 
@@ -198,7 +198,7 @@
         },
         
         beforeDestroy() {
-          this.stopCloudCannonChanges();
+          this.stopCloudCannonChanges(this);
         }
 
 
