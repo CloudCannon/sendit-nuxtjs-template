@@ -4,10 +4,16 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="section-header @@disply"
-              v-style="block.remove_top_padding ? 'padding-top: 0' : ''">
+            v-if="block.remove_top_padding"
+              :style="{paddingTop: 0}">
             <h2>{{ block.title }}<span>{{ block.title_suffix }}</span></h2>
             <p v-html="block.description"></p>
           </div>
+          <div class="section-header @@disply"
+            v-else>
+            <h2>{{ block.title }}<span>{{ block.title_suffix }}</span></h2>
+            <p v-html="block.description"></p>
+          </div>          
         </div>
       </div>
     </div>
