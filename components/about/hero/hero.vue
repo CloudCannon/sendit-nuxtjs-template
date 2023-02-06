@@ -26,7 +26,7 @@
               <nuxt-img format="webp" :src="item.image" alt="aboutfeature" loading="lazy"/>
             </div>
             <div class="pattern">
-              <nuxt-img format="webp" src="~/assets/images/about/patterns-two.png" alt="patterns" loading="lazy"/>
+              <img src="~/assets/images/about/patterns-two.png" alt="patterns" loading="lazy"/>
             </div>
           </div>
         </div>

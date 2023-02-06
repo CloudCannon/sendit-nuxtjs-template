@@ -15,7 +15,7 @@
                <div class="feature-hero-banner">
                   <nuxt-img format="webp" :src="block.image" alt="banner-image" loading="lazy" />
                   <div class="shape">
-                     <nuxt-img format="webp" src="~/assets/images/feature/effect-4.png" alt="shape" loading="lazy" />
+                     <img src="~/assets/images/feature/effect-4.png" alt="shape" loading="lazy" />
                   </div>
                </div>
             </div>
