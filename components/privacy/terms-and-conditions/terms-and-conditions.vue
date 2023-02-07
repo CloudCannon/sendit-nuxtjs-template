@@ -29,7 +29,7 @@
                         v-if="index == 1">
                       {{item.heading}}
                     </a>
-                    <a class="nav-link" :href="'#item'+index">
+                    <a class="nav-link" :href="'#item'+index" v-else>
                       {{item.heading}}</a
                     >                    
                   </li>
