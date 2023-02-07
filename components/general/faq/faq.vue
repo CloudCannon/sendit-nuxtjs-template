@@ -23,6 +23,8 @@
                               data-bs-target="#collapseOne"
                               aria-expanded="true"
                               aria-controls="collapseOne"
+                              @click="activeAccordion($event)"
+
                            >
                               <p class="header-content">{{item.title}}</p>
                            </button>
@@ -46,6 +48,7 @@
                               :data-bs-target="'#collapse' + (index + 1)"
                               aria-expanded="false"
                               :aria-controls="'collapse' +(index + 1)"
+                              @click="activeAccordion($event)"
                            >
                               <p class="header-content">{{item.title}}</p>
                            </button>
@@ -71,6 +74,18 @@
       props: [
          'block','dataBinding'
       ],
+
+      methods: {
+         activeAccordion(event){
+            const accordionItem = event.currentTarget.parentNode.closest('.accordion-item')
+            var current = document.getElementsByClassName('shows');
+            current[0].className = current[0].className.replace(' shows', '');
+            accordionItem.className += ' shows';
+
+
+         }
+      }
    }
 </script>
+
 
