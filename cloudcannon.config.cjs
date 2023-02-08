@@ -1,7 +1,7 @@
 module.exports = {
     paths: {
-        // collections: 'content',
-        // data: 'data',
+        collections: 'content',
+        data: 'data',
         static: 'dist',
         uploads: 'static/images'
     },
@@ -37,9 +37,11 @@ module.exports = {
                 "visual"
             ],
             schemas: {
-                post: {
+                default: {
                     name: 'New Blog Post',
-                    path: 'schemas/post.md'
+                    path: 'schemas/post.md',
+                    hide_extra_inputs: false,
+                    remove_extra_inputs: false
                 }
             }
         }
@@ -51,15 +53,15 @@ module.exports = {
         title_suffix: {
             comment: "Added at the end of the title and highlighted in a different color"
         },
-        // pagination.data: {
-        //   hidden: true
-        // },
-        // pagination.alias: {
-        //   hidden: true
-        // },
-        // pagination.size: {
-        //   type: "number"
-        // },
+        'pagination.data': {
+          hidden: true
+        },
+        'pagination.alias': {
+          hidden: true
+        },
+        'pagination.size': {
+          type: "number"
+        },
         "social[*].icon": {
             type: "select",
             options: {
