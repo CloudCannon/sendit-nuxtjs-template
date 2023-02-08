@@ -19,7 +19,7 @@
                <article class="blog-post">
                   <div class="blog-post-thumb">
                      <a :href="blog.slug">
-                        <nuxt-img format="webp" v-if="blog.thumbImg"
+                        <nuxt-img format="webp" v-if="blog.thumbImg.image"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
                      </a>
                   </div>
