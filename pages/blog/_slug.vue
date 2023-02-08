@@ -30,7 +30,6 @@
                       class="w-100 mb-xxl-11 mb-8"
                       :alt="page.featuredImg.image_alt"
                     />
-                    <!-- TODO: check if this is needed-->
                     <div style="max-width: 900px; margin: 0 auto">
                       <nuxt-content :document="page"/></div>
                 </article>
@@ -172,7 +171,6 @@
         metaData.push({"og:description": pageDescription});
 
         // Meta tags for open graph and twitter
-        // TODO: check if this content is correct
         metaData.push({name: "twitter:card", content: "summary_large_image" });
         metaData.push({name: "twitter:site", content: siteData.twitter_site });
 

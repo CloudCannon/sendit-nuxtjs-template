@@ -37,7 +37,7 @@ module.exports = {
                 "visual"
             ],
             schemas: {
-                default: {
+                post: {
                     name: 'New Blog Post',
                     path: 'schemas/post.md'
                 }

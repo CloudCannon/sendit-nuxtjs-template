@@ -120,7 +120,6 @@
         metaData.push({"og:description": pageDescription});
 
         // Meta tags for open graph and twitter
-        // TODO: check if this content is correct
         metaData.push({name: "twitter:card", content: "summary_large_image" });
         metaData.push({name: "twitter:site", content: siteData.twitter_site });
 
