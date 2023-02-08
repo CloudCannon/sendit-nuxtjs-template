@@ -97,7 +97,7 @@
             const blogPosts = await $content('blog') 
             .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
-            .limit(page.pagination.size + 1)
+            .limit(page.pagination.size)
             .fetch()
             const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  });
             const allPosts = await $content('blog').only(['title']).fetch();

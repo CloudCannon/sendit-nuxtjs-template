@@ -124,7 +124,7 @@ export default {
     const blogPosts = await $content('blog') 
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
-    .limit(blogLanding.pagination.size + 1)
+    .limit(blogLanding.pagination.size)
     .skip(skipNumber)
     .fetch() 
 

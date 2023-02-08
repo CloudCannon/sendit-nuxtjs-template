@@ -41,67 +41,6 @@
             </div>
          </div>
       </div>
-      <section id="next" v-if="nextPage">
-         <nav class="blog-pagination">
-               <ul class="pagination">
-                  <li class="page-item" v-if="(params.number - 1) > 1 ">
-                     <a class="page-link btn btn-secondary" 
-                     :href="previousButtonLink(params.number)"
-                     >
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="20.657"
-                           height="11.314"
-                           viewBox="0 0 20.657 11.314"
-                           style="transform: scale(-1, 1)"
-                        >
-                           <g fill="#fff" data-name="Group 12">
-                              <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
-                              <path
-                                 d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z"
-                                 data-name="Rectangle 2401"
-                              ></path>
-                              <path
-                                 d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z"
-                                 data-name="Rectangle 2402"
-                              ></path>
-                           </g>
-                        </svg>
-                     </a>
-                  </li>
-               <li class="page-item" v-for="index in (Math.round(numberOfPosts/blogLanding.pagination.size ))">
-                  <a
-                     class="page-link btn btn-secondary"
-                     :class="{active: index == params.number}"
-                     :href="'/blog/page/' + index"
-                     >{{ index}}
-                  </a>
-               </li>
-                  <li class="page-item">
-                    <a class="page-link btn btn-secondary" :href="'/blog/page/' + (parseInt(params.number) + 1)">
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="20.657"
-                           height="11.314"
-                           viewBox="0 0 20.657 11.314"
-                        >
-                           <g fill="#fff" data-name="Group 12">
-                              <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
-                              <path
-                                 d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z"
-                                 data-name="Rectangle 2401"
-                              ></path>
-                              <path
-                                 d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z"
-                                 data-name="Rectangle 2402"
-                              ></path>
-                           </g>
-                        </svg>
-                     </a>
-                  </li>
-               </ul>
-            </nav>
-      </section>
    </section>      
    
 
@@ -118,8 +57,6 @@ export default {
     const blogPosts = await $content('blog') 
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
-    .limit(blogLanding.pagination.size)
-    .skip((params.number -1 ) * blogLanding.pagination.size)
     .fetch()
  
     const blog = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.slug) })
@@ -129,11 +66,10 @@ export default {
       }  
    else{
       const allPosts = await $content('blog').only(['title']).fetch();
-      const nextPage = (allPosts.length > ((params.number -1 ) * blogLanding.pagination.size)); 
-      const posts = nextPage ? blog.slice(0, -1) : blog;
+      const posts = blog;
       const numberOfPosts = allPosts.length;
       return {
-         blogLanding, blog, nextPage, posts, numberOfPosts, params
+         blogLanding, blog, posts, numberOfPosts, params
       };
    }  
   },
