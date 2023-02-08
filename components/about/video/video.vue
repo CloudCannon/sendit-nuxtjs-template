@@ -11,7 +11,7 @@
             </div>
             <div class="col-lg-6">
                <div class="works-banner">
-                  <nuxt-img format="webp" :src="block.video.image" class="w-100" alt="banner-image" loading="lazy" style="border-radius:20px"/>
+                  <nuxt-img format="webp" :src="block.video.image" class="w-100" alt="banner-image" loading="lazy" style="border-radius:20px" v-if="block.video.image"/>
                   <div class="effect">
                      <img src="~/assets/images/works/effect.png" alt="effect" loading="lazy" />
                   </div>

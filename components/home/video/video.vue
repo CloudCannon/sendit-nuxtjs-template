@@ -9,6 +9,7 @@
               class="w-100"
               alt="banner-image"
               loading="lazy"
+              v-if="block.image"
             />
             <div class="effect-one">
               <img

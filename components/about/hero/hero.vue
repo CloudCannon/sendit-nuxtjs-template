@@ -23,7 +23,7 @@
               v-for="item in block.hero_images"
               :class="classObject(item.placement)"
               >
-              <nuxt-img format="webp" :src="item.image" alt="aboutfeature" loading="lazy"/>
+              <nuxt-img format="webp" :src="item.image" alt="aboutfeature" loading="lazy" v-if="item.image"/>
             </div>
             <div class="pattern">
               <img src="~/assets/images/about/patterns-two.png" alt="patterns" loading="lazy"/>

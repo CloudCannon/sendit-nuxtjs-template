@@ -6,7 +6,7 @@
          >
             <div class="container-fluid">
                <NuxtLink to="/" class="navbar-brand" exact>
-                  <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" />
+                  <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" v-if="nav.logo"/>
                </NuxtLink>
                <button
                   class="navbar-toggler"

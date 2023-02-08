@@ -12,7 +12,7 @@
             <div class="col-lg-3 col-md-6" v-for="item in block.team_members">
                <div class="team-member">
                   <div class="team-member-thumb">
-                     <nuxt-img format="webp" :src="item.image" alt="team-member-1 png" loading="lazy" style="border-radius:20px"/>
+                     <nuxt-img format="webp" :src="item.image" alt="team-member-1 png" loading="lazy" style="border-radius:20px" v-if="item.image"/>
                   </div>
                   <div class="team-member-details">
                      <h3>{{item.name}}</h3>
