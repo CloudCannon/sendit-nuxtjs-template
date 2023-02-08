@@ -37,11 +37,11 @@ module.exports = {
                 "visual"
             ],
             schemas: {
-                default: {
+                blog_post: {
                     name: 'New Blog Post',
                     path: 'schemas/post.md',
                     hide_extra_inputs: false,
-                    remove_extra_inputs: false
+                    remove_extra_inputs: false,
                 }
             }
         }
