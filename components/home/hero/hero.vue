@@ -17,7 +17,7 @@
          </div>
          <div class="col-lg-6">
             <div class="hero-two-banner">
-               <nuxt-img format="webp" :src="block.image" alt="hero-two-images" v-if="block.image"/> 
+               <nuxt-img format="webp" :src="block.image" alt="hero-two-images" v-if="block.image" :placeholder="[716, 725]"/> 
                <div class="hero-two-banner-shape"></div>
             </div>
          </div>

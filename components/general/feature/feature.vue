@@ -8,11 +8,6 @@
               <nuxt-img format="webp" :src="block.image" alt="card-images" loading="lazy" v-if="block.image"/>
             </div>
             <div class="effect-one">
-              <img
-                src="~/assets/images/feature/effect-1.png"
-                alt="effect-image"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
@@ -48,11 +43,13 @@
               <nuxt-img format="webp" :src="block.image" alt="card-images" loading="lazy" v-if="block.image"/>
             </div>
             <div class="effect-two">
+              <!--
               <img
                 src="~/assets/images/feature/effect-2.png"
                 alt="effect-image"
                 loading="lazy"
               />
+              -->
             </div>
           </div>
         </div>

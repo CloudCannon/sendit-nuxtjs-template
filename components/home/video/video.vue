@@ -12,18 +12,8 @@
               v-if="block.image"
             />
             <div class="effect-one">
-              <img
-                src="~/assets/images/video/effect-one.png"
-                alt="effect"
-                loading="lazy"
-              />
             </div>
             <div class="effect-two">
-              <img
-                src="~/assets/images/video/effect-two.png"
-                alt="effect"
-                loading="lazy"
-              />
             </div>
             <div
               class="video-iframe d-flex align-items-center justify-content-center"
