@@ -48,7 +48,8 @@ els.forEach(el => {
 
    // Scroll spy
    $(document).ready(function () {
-      $('body').scrollspy({
+      if(document.getElementById("#scrol-nav")){
+         $('body').scrollspy({
          target: '#scrol-nav',
          offset: 20,
       });
@@ -68,6 +69,7 @@ els.forEach(el => {
             navbar.removeClass('bg-light').addClass('bg-transparent');
          }
       }
+   }
    });
    //end  Scroll spy style
 });

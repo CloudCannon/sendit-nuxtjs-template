@@ -39,24 +39,26 @@ $(document).ready(function () {
     });
     // Scroll spy
     $(document).ready(function () {
-      $("body").scrollspy({
-        target: "#scrol-nav",
-        offset: 20,
-      });
-  
-      // Navbar fade
-      changeNavbar();
-  
-      $(window).scroll(function () {
+      if(document.getElementById("#scrol-nav")){
+        $("body").scrollspy({
+          target: "#scrol-nav",
+          offset: 20,
+        });
+    
+        // Navbar fade
         changeNavbar();
-      });
-  
-      function changeNavbar() {
-        var navbar = $("#scrol-nav");
-        if ($(this).scrollTop() >= 20) {
-          navbar.addClass("bg-light").removeClass("bg-transparent");
-        } else if ($(this).scrollTop() < 20) {
-          navbar.removeClass("bg-light").addClass("bg-transparent");
+    
+        $(window).scroll(function () {
+          changeNavbar();
+        });
+    
+        function changeNavbar() {
+          var navbar = $("#scrol-nav");
+          if ($(this).scrollTop() >= 20) {
+            navbar.addClass("bg-light").removeClass("bg-transparent");
+          } else if ($(this).scrollTop() < 20) {
+            navbar.removeClass("bg-light").addClass("bg-transparent");
+          }
         }
       }
     });
