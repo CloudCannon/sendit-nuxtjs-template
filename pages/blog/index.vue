@@ -99,7 +99,7 @@
             .sortBy('createdAt', 'asc')
             .fetch()
             const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  });
-            const posts = blog.slice(0, page.pagination.size);
+            const posts = blog;
             const allPosts = await $content('blog').only(['title']).fetch();
             const nextPage = allPosts.length > page.pagination.size;
             const numberOfPosts = allPosts.length;
