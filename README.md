@@ -59,3 +59,15 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 * Theme colors can be set in *Data* / *Theme*
 * The main colors are set and variants of them are computed
 * The colors will update on the next build
+
+## Nuxt Content
+* The project structure is following @nuxt/content see docs here https://content.nuxtjs.org/v1/getting-started/introduction 
+* Components are added in a pages front matter under content_blocks.
+* To place components we simply fetch the content_blocks array from the front matter of the page we are on, and loop through this array in a components tag
+
+## SSG
+* This site is build using Static Site Generation. As this template is configured for CloudCannon SSR feature's are disabled. 
+## Components
+* Components code (HTML / JS) is stored in the components folder and are auto loaded into the project. 
+* The component-library directory is used for CloudCannon live editing. YAML files inside this directory matching the path as the components code will be used as a blue print for CloudCannon's live editing. 
+
