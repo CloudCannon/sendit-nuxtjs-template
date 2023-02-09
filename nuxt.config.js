@@ -22,6 +22,7 @@ export default {
       { src: '/bootstrap/bootstrap.bundle.min.js', body: true },
       { src: '/waypoints/waypoints.min.js', body: true },
       { src: '/magnific-popup/magnific-popup.min.js', body: true },
+      { src: '/magnific-popup/magnific-popup.js', body: true },
       { src: '/js/script.js', body: true, defer: true}
 
     ],
