@@ -97,8 +97,10 @@
             const blogPosts = await $content('blog') 
             .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
+            .limit(page.pagination.size)
+            .where({slug: { $ne: 'index'}})
             .fetch()
-            const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  });
+            const blog = blogPosts;
             const posts = blog;
             const allPosts = await $content('blog').only(['title']).fetch();
             const nextPage = allPosts.length > page.pagination.size;

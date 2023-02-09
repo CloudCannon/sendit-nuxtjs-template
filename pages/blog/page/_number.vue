@@ -125,10 +125,10 @@ export default {
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
     .limit(blogLanding.pagination.size)
+    .where({slug: { $ne: 'index'}})
     .skip(skipNumber)
     .fetch() 
-   console.log(skipNumber);
-    const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  })
+    const blog = blogPosts;
     const allPosts = await $content('blog').only(['title']).fetch();
    const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
     const numberOfPosts = allPosts.length;
