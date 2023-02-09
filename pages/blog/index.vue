@@ -15,7 +15,7 @@
    <section class="blog @@padding @@blog-two">
       <div class="container">
          <div class="row">
-         <div class="col-lg-4 col-md-6" v-for="blog in blog">
+         <div class="col-lg-4 col-md-6" v-for="blog in posts">
                <article class="blog-post">
                   <div class="blog-post-thumb">
                      <a :href="blog.slug">
@@ -97,15 +97,15 @@
             const blogPosts = await $content('blog') 
             .only(['title', 'slug', 'thumbImg', 'tags'])
             .sortBy('createdAt', 'asc')
-            .limit(page.pagination.size)
             .fetch()
             const blog = blogPosts.filter(function(e) { return e.slug !== 'index'  });
+            const posts = blog.slice(0, page.pagination.size);
             const allPosts = await $content('blog').only(['title']).fetch();
             const nextPage = allPosts.length > page.pagination.size;
             const numberOfPosts = allPosts.length;
 
           return {
-              page, blog, nextPage, numberOfPosts
+              page, blog, nextPage, numberOfPosts, posts
           };
       
         }, 
