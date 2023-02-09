@@ -57,7 +57,7 @@
                     <div class="blog-post-content">
                       <div class="blog-post-tag">
                           <div v-for="(tag, index) in blog.tags">
-                            <a :href="'/tag/'+ tag" v-if="index < 2">{{ tag }}</a>
+                            <a :href="'/tags/'+ tag" v-if="index < 2">{{ tag }}</a>
                           </div>
                       </div>
                       <div class="blog-post-title">
