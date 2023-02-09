@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-6">
                <div class="feature-hero-banner">
-                  <nuxt-img format="webp" :src="block.image" alt="banner-image" loading="lazy" v-if="block.image" :placeholder="[500, 500]"/>
+                  <nuxt-img format="webp" :src="block.image" alt="banner-image" v-if="block.image"/>
                   <div class="shape">
                   </div>
                </div>
