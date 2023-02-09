@@ -18,11 +18,11 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     script: [
-      { src: '/jQuery/jquery.min.js', body: true, async: true },
-      { src: '/bootstrap/bootstrap.bundle.min.js', body: true, async: true },
-      { src: '/waypoints/waypoints.min.js', body: true, async: true },
-      { src: '/magnific-popup/magnific-popup.min.js', body: true, async: true },
-      { src: '/js/script.js', defer: true}
+      { src: '/jQuery/jquery.min.js', body: true },
+      { src: '/bootstrap/bootstrap.bundle.min.js', body: true },
+      { src: '/waypoints/waypoints.min.js', body: true },
+      { src: '/magnific-popup/magnific-popup.min.js', body: true },
+      { src: '/js/script.js', body: true}
 
     ],
     link: [
