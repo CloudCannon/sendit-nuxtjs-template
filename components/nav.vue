@@ -85,12 +85,15 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto mb-20 mb-lg-0">
                         <li class="nav-item" v-for="item in nav.items">
-                           <a
+                           <client-only>
+                              <a
                               class="nav-link"
-                              :class="activeLink(item.link)"
+                              :class="{'nuxt-link-active': (item.link === $route.path) }"
                               :href="item.link"
                               >{{ item.text }}
                         </a>
+
+                           </client-only>
                            
                         </li>
                   </ul>
@@ -115,14 +118,5 @@ export default {
       nav: navData, 
     };
   },
-
-  methods:{
-      activeLink(url){
-         if(url === this.$route.path){
-            return "nuxt-link-active"
-         }
-      }
-  }
-
 };
 </script>
