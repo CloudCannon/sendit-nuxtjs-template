@@ -115,13 +115,5 @@ export default {
       nav: navData, 
     };
   },
-
-  mounted() {
-   document.querySelectorAll(".nav-link").forEach((link) => {
-      if (link.href === window.location.href) {
-         link.classList.add("nuxt-link-active");
-      }
-   });
-  }
 };
 </script>
