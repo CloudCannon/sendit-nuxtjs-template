@@ -26,8 +26,7 @@
                         <h3>{{ item.title }}</h3>
                         <ul class="list-unstyled">
                            <li v-for="link in item.links">
-                              <NuxtLink :to="link.link" v-if="link.link !== '/sitemap.xml'">{{ link.text }}</NuxtLink>
-                              <a :href="link.link" v-else>{{ link.text }}</a>
+                              <a :href="link.link" class="footer-link">{{ link.text }}</a>
 
                            </li>
                         </ul>

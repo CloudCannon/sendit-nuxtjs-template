@@ -6,4 +6,11 @@ $(document).ready(function () {
       obj.classList.add("nuxt-link-active");
     }
    });
+
+   $(".footer-link").each(function(i, obj) {
+    if(obj.href === window.location.href){
+      obj.classList.add("nuxt-link-active");
+    }
+   });
+
 });
