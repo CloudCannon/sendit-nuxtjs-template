@@ -26,7 +26,7 @@
                         <h3>{{ item.title }}</h3>
                         <ul class="list-unstyled">
                            <li v-for="link in item.links">
-                              <a :href="link.link" class="footer-link">{{ link.text }}</a>
+                              <a :href="link.link">{{ link.text }}</a>
 
                            </li>
                         </ul>
