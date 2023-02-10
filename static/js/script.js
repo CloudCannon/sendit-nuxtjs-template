@@ -1,5 +1,18 @@
 $(document).ready(function () {
     "use strict";
+    // Magnific Popup
+  
+    $('.popup-vimeo').each(function(i, obj) {
+      $(this).magnificPopup({
+        disableOn: 700,
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false,
+      });
+  });
+
     $(window).on("scroll", function () {
       var windscroll = $(window).scrollTop();
       if (windscroll >= 70) {
@@ -13,15 +26,6 @@ $(document).ready(function () {
       navbar.toggleClass("bg-nav");
     });
   
-    // Magnific Popup
-    $(".popup-vimeo").magnificPopup({
-      disableOn: 700,
-      type: "iframe",
-      mainClass: "mfp-fade",
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false,
-    });
     //Show password
     $(".viewPassword").click(function () {
       $(this).toggleClass("fa-eye fa-eye-slash");

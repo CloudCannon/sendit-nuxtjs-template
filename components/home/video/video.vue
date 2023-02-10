@@ -19,7 +19,7 @@
               class="video-iframe d-flex align-items-center justify-content-center"
             >
               <div class="video-icon me-sm-9 me-8">
-                <a class="popup-vimeo" :href="block.video_url">
+                <a class="popup-vimeo" id="popup-vimeo-home" :href="block.video_url">
                   <svg
                     width="28"
                     height="32"
