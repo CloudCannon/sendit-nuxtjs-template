@@ -18,10 +18,10 @@
          <div class="col-lg-4 col-md-6" v-for="blog in posts">
                <article class="blog-post">
                   <div class="blog-post-thumb">
-                     <NuxtLink :to="'/blog/' + blog.slug">
+                     <a :href="'/blog/' + blog.slug">
                         <nuxt-img format="webp" v-if="blog.thumbImg.image"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
-                     </NuxtLink>
+                     </a>
                   </div>
                   <div class="blog-post-content">
 
@@ -129,7 +129,6 @@ export default {
     .skip(skipNumber)
     .fetch();
 
-    console.log(blogPosts);
     const blog = blogPosts;
     const allPosts = await $content('blog').only(['title']).fetch();
    const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;

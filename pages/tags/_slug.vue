@@ -15,13 +15,13 @@
    <section class="blog @@padding @@blog-two">
       <div class="container">
          <div class="row">
-         <div class="col-lg-4 col-md-6" v-for="blog in posts">
+         <div class="col-lg-4 col-md-6" v-for="blog in blog">
                <article class="blog-post">
                   <div class="blog-post-thumb">
-                     <NuxtLink :to="'/blog/' + blog.slug">
+                     <a :href="'/blog/' + blog.slug">
                         <nuxt-img format="webp" v-if="blog.thumbImg.image"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
-                     </NuxtLink>
+                     </a>
                   </div>
                   <div class="blog-post-content">
 
@@ -34,7 +34,7 @@
                         </div>
                      </div>
                      <div class="blog-post-title">
-                        <NuxtLink :to="'/blog/' + blog.slug">{{blog.title}}</NuxtLink>
+                        <a :href="'/blog/' + blog.slug">{{blog.title}}</a>
                      </div>
                   </div>
                </article>
@@ -105,12 +105,11 @@ export default {
       }  
    else{
       const allPosts = await $content('blog').only(['title']).fetch();
-      const posts = blog;
       const numberOfPosts = allPosts.length;
       const nextPage = numberOfTag > blogLanding.pagination.size;
 
       return {
-         blogLanding, blog, posts, numberOfPosts, params, nextPage, numberOfTag
+         blogLanding, blog, numberOfPosts, params, nextPage, numberOfTag
       };
    }  
   },

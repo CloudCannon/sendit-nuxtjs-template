@@ -5,9 +5,9 @@
             id="mainnavigationBar"
          >
             <div class="container-fluid">
-               <NuxtLink to="/" class="navbar-brand" exact>
+               <a href="/" class="navbar-brand" exact>
                   <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" v-if="nav.logo"/>
-               </NuxtLink>
+               </a>
                <button
                   class="navbar-toggler"
                   type="button"
@@ -97,9 +97,9 @@
                </div>
                <div class="d-none d-lg-block">
                   <div class="nav-item">
-                     <NuxtLink :to="nav.button.link" class="btn btn-sm btn-links" exact>
+                     <a :href="nav.button.link" class="btn btn-sm btn-links" exact>
                         {{ nav.button.text }}
-                     </NuxtLink>
+                     </a>
                   </div>
                </div>
             </div>

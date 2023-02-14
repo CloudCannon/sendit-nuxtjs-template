@@ -15,13 +15,13 @@
    <section class="blog @@padding @@blog-two">
       <div class="container">
          <div class="row">
-         <div class="col-lg-4 col-md-6" v-for="blog in posts">
+         <div class="col-lg-4 col-md-6" v-for="blog in blog">
                <article class="blog-post">
                   <div class="blog-post-thumb">
-                     <NuxtLink :to="'/blog/' + blog.slug">
+                     <a :href="'/blog/' + blog.slug">
                         <nuxt-img format="webp" v-if="blog.thumbImg.image"
                         :src="blog.thumbImg.image" :alt="blog.thumbImg.image_alt" loading="lazy" />
-                     </NuxtLink>
+                     </a>
                   </div>
                   <div class="blog-post-content">
 
@@ -109,41 +109,31 @@
 export default {
   async asyncData({ $content, params, error }) {
    let skipNumber = 0;
-    const blogLanding = await $content('blog', 'index')
-    .fetch()
-    .catch(err => {
-    error({ statusCode: 404, message: "Page not found" });
-    });
+   const blogLanding = await $content('blog', 'index')
+   .fetch()
+   .catch(err => {
+   error({ statusCode: 404, message: "Page not found" });
+   });
 
-    if(!(params.number - 1 == 0)){
-      skipNumber = (params.number - 1 ) * blogLanding.pagination.size;
+   if(!(params.number - 1 == 0)){
+   skipNumber = (params.number - 1 ) * blogLanding.pagination.size;
    }
 
-    const blogPosts = await $content('blog') 
-    .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
-    .sortBy('createdAt', 'asc')
-    .limit(blogLanding.pagination.size)
-    .fetch() 
-   //  const blog = blogPosts;
-   //  const allPosts = await $content('blog').only(['title']).fetch();
-   // const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
-   //  const numberOfPosts = allPosts.length;
-   //  const posts = blog;
-
+   const blogPosts = await $content('blog') 
+   .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
+   .sortBy('createdAt', 'asc')
+   .fetch() 
 
    const filteredPost = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.tag) })
    const numberOfTag = filteredPost.length; 
    const blog = filteredPost.slice(skipNumber, blogLanding.pagination.size + skipNumber);
    const nextPage = numberOfTag > blogLanding.pagination.size;
-    const posts = blog;
 
-
-    console.log(params.tag);
-    if(posts.length < 1){
-      error({ statusCode: 404, message: "Page not found" });
-    }
+   if(blog.length < 1){
+   error({ statusCode: 404, message: "Page not found" });
+   }
     return {
-      blogLanding, blog, nextPage, posts, params, numberOfTag
+      blogLanding, blog, nextPage, params, numberOfTag
     };
   },
 

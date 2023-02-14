@@ -5,9 +5,9 @@
                <div class="row">
                   <div class="col-12 col-lg-4 me-auto order-2 order-lg-1">
                      <div class="footer-logo mt-7 mt-md-0">
-                        <NuxtLink to="/" class="">
+                        <a href="/" class="">
                            <nuxt-img format="webp" :src="footer.logo" alt="logo" v-if="footer.logo"/>
-                        </NuxtLink>
+                        </a>
                         <p class="" v-text="`Copyright ${currentDate.getFullYear()} ${footer.copyright}`">
                            
                         </p>
