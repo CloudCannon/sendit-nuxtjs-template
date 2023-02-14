@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
   // active nav links
    $(".nav-link").each(function(i, obj) {
-    if(obj.href === window.location.href){
+    if(obj.href === window.location.href || obj.href.slice(0, -1) == window.location.href){
       obj.classList.add("nuxt-link-active");
     }
    });

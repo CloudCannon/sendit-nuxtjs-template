@@ -27,7 +27,6 @@
                         <ul class="list-unstyled">
                            <li v-for="link in item.links">
                               <a :href="link.link">{{ link.text }}</a>
-
                            </li>
                         </ul>
                      </div>
