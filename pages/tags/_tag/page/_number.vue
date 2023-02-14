@@ -41,7 +41,7 @@
             </div>
          </div>
       </div>
-      <section id="next">
+         <section id="next">
          <nav class="blog-pagination">
                <ul class="pagination">
                   <li class="page-item" v-if="(params.number - 1) >= 1 ">
@@ -69,7 +69,7 @@
                         </svg>
                      </a>
                   </li>
-               <li class="page-item" v-for="index in (Math.round(numberOfPosts/blogLanding.pagination.size ))">
+               <li class="page-item" v-for="index in (Math.round(numberOfTag/blogLanding.pagination.size ))">
                   <a
                      class="page-link btn btn-secondary"
                      :class="{active: index == params.number}"
@@ -103,9 +103,7 @@
             </nav>
       </section>
    </section>      
-   
-
-    </div>
+       </div>
 </template>
 <script>
 export default {
@@ -125,22 +123,27 @@ export default {
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
     .limit(blogLanding.pagination.size)
-    .where({slug: { $ne: 'index'}})
-    .skip(skipNumber)
-    .fetch();
+    .fetch() 
+   //  const blog = blogPosts;
+   //  const allPosts = await $content('blog').only(['title']).fetch();
+   // const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
+   //  const numberOfPosts = allPosts.length;
+   //  const posts = blog;
 
-    console.log(blogPosts);
-    const blog = blogPosts;
-    const allPosts = await $content('blog').only(['title']).fetch();
-   const nextPage = skipNumber + blogLanding.pagination.size < allPosts.length;
-    const numberOfPosts = allPosts.length;
+
+   const filteredPost = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.tag) })
+   const numberOfTag = filteredPost.length; 
+   const blog = filteredPost.slice(skipNumber, blogLanding.pagination.size + skipNumber);
+   const nextPage = numberOfTag > blogLanding.pagination.size;
     const posts = blog;
 
+
+    console.log(params.tag);
     if(posts.length < 1){
       error({ statusCode: 404, message: "Page not found" });
     }
     return {
-      blogLanding, blog, nextPage, posts, numberOfPosts, params
+      blogLanding, blog, nextPage, posts, params, numberOfTag
     };
   },
 

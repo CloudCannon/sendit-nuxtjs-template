@@ -41,6 +41,43 @@
             </div>
          </div>
       </div>
+      <section id="next" v-if="nextPage">
+         <nav class="blog-pagination">
+               <ul class="pagination">
+               <li class="page-item" v-for="index in (Math.round(numberOfPosts/blogLanding.pagination.size ))">
+                  <a
+                     class="page-link btn btn-secondary"
+                     :class="{active: index === 1}"
+                     :href="'/tags/' + params.slug + '/page/' + index"
+                     >{{ index}}
+                  </a>
+               </li>
+                  <li class="page-item">
+                     <a class="page-link btn btn-secondary" :href="'/blog/page/2'">
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           width="20.657"
+                           height="11.314"
+                           viewBox="0 0 20.657 11.314"
+                        >
+                           <g fill="#fff" data-name="Group 12">
+                              <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
+                              <path
+                                 d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z"
+                                 data-name="Rectangle 2401"
+                              ></path>
+                              <path
+                                 d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z"
+                                 data-name="Rectangle 2402"
+                              ></path>
+                           </g>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+      </section>
+
    </section>      
    
 
@@ -58,8 +95,10 @@ export default {
     .only(['title', 'slug', 'thumbImg', 'tags', 'title', 'description'])
     .sortBy('createdAt', 'asc')
     .fetch()
- 
-    const blog = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.slug) })
+
+    const filteredPost = blogPosts.filter(function(e) { return e.slug !== 'index' && e.tags.includes(params.slug) })
+    const numberOfTag = filteredPost.length; 
+    const blog = filteredPost.slice(0, blogLanding.pagination.size)
 
     if (blog.length < 1) {
             error({ statusCode: 404, message: "Page not found" });
@@ -68,8 +107,10 @@ export default {
       const allPosts = await $content('blog').only(['title']).fetch();
       const posts = blog;
       const numberOfPosts = allPosts.length;
+      const nextPage = numberOfTag > blogLanding.pagination.size;
+
       return {
-         blogLanding, blog, posts, numberOfPosts, params
+         blogLanding, blog, posts, numberOfPosts, params, nextPage, numberOfTag
       };
    }  
   },
