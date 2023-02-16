@@ -1,0 +1,6 @@
+{
+	"ssg": "nuxtjs",
+	"build_configuration": {
+	  "build_command": "npm run generate"
+	}
+  }
