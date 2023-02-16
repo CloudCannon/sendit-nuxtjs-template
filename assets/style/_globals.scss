@@ -202,8 +202,8 @@
    }
 }
 
-/********** 
- 1. Default  Styles 
+/**********
+ 1. Default  Styles
 **********/
 // @use 'sass:math';
 /*Font */
@@ -289,8 +289,8 @@ a {
 .next-blog {
    display: none;
 }
-/********** 
-  15. Custom Styles 
+/**********
+  15. Custom Styles
 **********/
 
 /* Privacy Page */
@@ -514,7 +514,7 @@ a {
    display: flex;
    align-items: center;
    margin-top: $base-margin;
-      
+
    a {
       color: $color-primary;
       display: flex;
@@ -584,7 +584,7 @@ a {
    box-shadow: none;
 }
 .accordion-button:not(.collapsed)::after {
-   background-image: url('data:image/svg+xml,%3csvg width="80" height="80" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="20" cy="20" r="20" fill="%23EBEBEB"/%3e%3cpath d="M13.125 20H26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3c/svg%3e');
+   background-image: url('/images/pricing/show-less.svg');
    transform: rotate(180deg);
 }
 .accordion-button::after {
@@ -595,7 +595,7 @@ a {
    height: 2.5rem;
    background-size: 2.5rem;
    content: '';
-   background-image: url('data:image/svg+xml,%3csvg width="80" height="80" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="20" cy="20" r="20" fill="%23EBEBEB"/%3e%3cpath d="M13.125 20H26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3cpath d="M20 13.125V26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3c/svg%3e');
+   background-image: url('/images/pricing/show-more.svg')
    background-repeat: no-repeat;
    transition: transform 0.2s ease-in-out;
    @include media-breakpoint-down-md {
@@ -731,8 +731,8 @@ a {
    }
 }
 
-/********** 
-  2. Button Styles 
+/**********
+  2. Button Styles
 **********/
 .btn {
    letter-spacing: $base-letter-spacing;
@@ -948,8 +948,8 @@ a {
    }
 }
 
-/********** 
- 3. Container and widths  Styles 
+/**********
+ 3. Container and widths  Styles
 **********/
 .container,
 .container-fluid,
@@ -1129,8 +1129,8 @@ a {
       margin-bottom: 3rem !important;
    }
 }
-/********** 
- 4. Spacing  Styles 
+/**********
+ 4. Spacing  Styles
 **********/
 .g-4,
 .gx-4 {
@@ -14673,7 +14673,7 @@ a {
    }
 }
 
-/********** 
+/**********
   5. Navbar Styles
 **********/
 .navbar {
@@ -15000,7 +15000,7 @@ a {
       }
    }
 }
-/********** 
+/**********
 15. Footer Section Styles
 **********/
 .footer {
@@ -15125,7 +15125,7 @@ a {
       }
    }
 }
-/********** 
+/**********
  16. Blog Page and Section Styles
 **********/
 .blog {
