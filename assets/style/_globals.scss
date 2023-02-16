@@ -595,7 +595,7 @@ a {
    height: 2.5rem;
    background-size: 2.5rem;
    content: '';
-   background-image: url('/images/pricing/show-more.svg')
+   background-image: url('/images/pricing/show-more.svg');
    background-repeat: no-repeat;
    transition: transform 0.2s ease-in-out;
    @include media-breakpoint-down-md {
