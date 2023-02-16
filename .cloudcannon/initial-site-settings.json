@@ -1,6 +1,7 @@
 {
 	"ssg": "nuxtjs",
 	"build_configuration": {
-	  "build_command": "npm run build"
+	  "build_command": "npm run generate",
+	  "output_path": "dist"
 	}
-  }
+}
