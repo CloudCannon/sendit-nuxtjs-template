@@ -16,7 +16,7 @@ content_blocks:
       text: Try This Free
       link: /signup
 pagination:
-  size: 3
+  size: 9
 seo:
   page_description: >-
     We believe that a good email marketing strategy is the key to growth. So
