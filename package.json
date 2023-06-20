@@ -1,28 +1,18 @@
 {
-  "name": "nuxt-two",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "prebuild:fetch-theme-color": "node static/js/fetch-theme-color.js"
-  },
-  "dependencies": {
-    "@nuxt/components": "^2.2.1",
-    "@nuxt/content": "^1.15.1",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "core-js": "^3.25.3",
-    "luxon": "^3.2.0",
-    "nuxt": "^2.15.8",
-    "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "preview": "nuxt preview",
+    "prebuild:fetch-theme-color": "node public/js/fetch-theme-color.js"
   },
   "devDependencies": {
-    "@nuxt/image": "^0.7.1",
-    "sass": "^1.56.1",
-    "sass-loader": "^10.4.1"
+    "@nuxt/content": "^2.6.0",
+    "@nuxt/image": "^1.0.0-rc.1",
+    "@types/node": "^18.15.12",
+    "luxon": "^3.3.0",
+    "nuxt": "^3.5.2",
+    "sass": "^1.63.2"
   }
 }

@@ -11,13 +11,13 @@
 
                   </div>
                <div class="">
-                  <a :href="block.button.link" class="btn btn-primary btn-lg"> {{ block.button.text }} </a> 
+                  <a :href="block.button.link" class="btn btn-primary btn-lg"> {{ block.button.text }} </a>
                </div>
             </div>
          </div>
          <div class="col-lg-6">
             <div class="hero-two-banner">
-               <nuxt-img format="webp" :src="block.image" alt="hero-two-images" v-if="block.image"/> 
+               <nuxt-img format="webp" :src="block.image" alt="hero-two-images" v-if="block.image"/>
                <div class="hero-two-banner-shape"></div>
             </div>
          </div>

@@ -19,7 +19,7 @@
         </div>
         <div class="col-xl-7 col-lg-12">
           <div class="about-hero-two-banner">
-            <div 
+            <div
               v-for="item in block.hero_images"
               :class="classObject(item.placement)"
               >

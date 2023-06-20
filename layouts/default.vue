@@ -1,7 +1,5 @@
 <template>
     <div>
-        <Nav></Nav>
-        <nuxt />
-        <Footer></Footer>
+        <slot />
     </div>
 </template>

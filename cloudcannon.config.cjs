@@ -3,7 +3,7 @@ module.exports = {
         collections: 'content',
         data: 'data',
         static: 'dist',
-        uploads: 'static/images'
+        uploads: 'public/images'
     },
     collections_config: {
         data: {

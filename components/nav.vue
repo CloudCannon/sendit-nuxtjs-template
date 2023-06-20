@@ -91,7 +91,7 @@
                               >{{ item.text }}
                         </a>
 
-                           
+
                         </li>
                   </ul>
                </div>
@@ -106,14 +106,9 @@
          </nav>
       </header>
 </template>
-<script>
+
+<script setup>
 import navData from "../data/nav.json";
 
-export default {
-  data() {
-    return {
-      nav: navData, 
-    };
-  },
-};
+const nav = navData;
 </script>

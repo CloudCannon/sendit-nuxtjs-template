@@ -9,12 +9,12 @@
                            <nuxt-img format="webp" :src="footer.logo" alt="logo" v-if="footer.logo"/>
                         </a>
                         <p class="" v-text="`Copyright ${currentDate.getFullYear()} ${footer.copyright}`">
-                           
+
                         </p>
                      </div>
                      <div class="social-icon">
                         <ul class="list-unstyled">
-                           <li v-for="item in footer.social"> 
+                           <li v-for="item in footer.social">
                               <a :href="item.link"> <i :class="item.icon" aria-hidden="true"></i><span class="visually-hidden">{{ item.icon_alt }}</span></a>
 
                            </li>
