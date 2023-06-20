@@ -1,8 +1,8 @@
 # Sendit
 
-Sendit is a polished, marketing website template for Nuxt. Browse through a [live demo](https://fleek-onion.cloudvent.net/). 
+Sendit is a polished, marketing website template for Nuxt. Browse through a [live demo](https://fleek-onion.cloudvent.net/).
 
-![Sendit template screenshot](public/images/_screenshot.png)
+![Sendit template screenshot](/_screenshot.png)
 
 
 [![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/sendit-nuxtjs-template)
@@ -13,7 +13,7 @@ Sendit is a polished, marketing website template for Nuxt. Browse through a [liv
 * Pre-styled components
 * Blog with pagination and category pages
 * Configurable navigation and footer
-* Multiple hero options 
+* Multiple hero options
 * Configurable theme colors
 * Optimised for editing in [CloudCannon](https://cloudcannon.com/)
 
@@ -61,13 +61,13 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 * The colors will update on the next build
 
 ## Nuxt Content
-* The project structure is following @nuxt/content see docs here https://content.nuxtjs.org/v1/getting-started/introduction 
+* The project structure uses Nuxt Content's Document-driven system. Read their docs: https://content.nuxtjs.org/guide/writing/document-driven
 * Components are added in a pages front matter under content_blocks.
 * To place components we simply fetch the content_blocks array from the front matter of the page we are on, and loop through this array in a components tag
 
 ## SSG
-* This site is build using Static Site Generation. As this template is configured for CloudCannon SSR feature's are disabled. 
+* This site is build using Static Site Generation. As this template is configured for CloudCannon SSR feature's are disabled.
 ## Components
-* Components code (HTML / JS) is stored in the components folder and are auto loaded into the project. 
-* The component-library directory is used for CloudCannon live editing. YAML files inside this directory matching the path as the components code will be used as a blue print for CloudCannon's live editing. 
+* Components code (HTML / JS) is stored in the components folder and are auto loaded into the project.
+* The component-library directory is used for CloudCannon live editing. YAML files inside this directory matching the path as the components code will be used as a blue print for CloudCannon's live editing.
 
