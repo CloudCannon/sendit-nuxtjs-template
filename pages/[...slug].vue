@@ -15,6 +15,8 @@
 
 <script setup>
   import { onMounted, onBeforeUnmount, ref } from 'vue';
+  import { onCloudCannonChanges, stopCloudCannonChanges } from '@cloudcannon/visual-editor-connector';
+
   const route = useRoute();
 
   const { page } = useContent();
@@ -37,38 +39,13 @@
 
   const formattedPage = ref(pageData.content_blocks ? formatBookshopName(pageData) : {});
 
-	const loadNewPropsFromCloudCannon = async (CloudCannon) => {
-		try {
-			const latestValue = await CloudCannon.value();
-      formattedPage.value = formatBookshopName(latestValue);
-		} catch(fetchError) {
-			console.warn('Failed to fetch latest page props', fetchError);
-		}
-	};
-
-  const onCloudCannonLoad = (CloudCannon) => {
-		CloudCannon.enableEvents();
-		loadNewPropsFromCloudCannon(CloudCannon);
-	};
-
-  const onLoadEventListener = (e) => {
-		onCloudCannonLoad(e.detail.CloudCannon);
-	};
-
-  const onUpdateEventListener = (e) => {
-		loadNewPropsFromCloudCannon(e.detail.CloudCannon);
-	};
-
   onMounted(() => {
-    document.addEventListener('cloudcannon:load', onLoadEventListener);
-		document.addEventListener('cloudcannon:update', onUpdateEventListener);
-		if (window.CloudCannon) {
-			onCloudCannonLoad(window.CloudCannon);
-		}
+    onCloudCannonChanges((latestValue) => {
+      formattedPage.value = formatBookshopName(latestValue);
+    });
   });
 
   onBeforeUnmount(() => {
-    document.removeEventListener('cloudcannon:load', onLoadEventListener);
-		document.removeEventListener('cloudcannon:update', onUpdateEventListener);
+    stopCloudCannonChanges();
   });
 </script>

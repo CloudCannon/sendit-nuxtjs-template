@@ -8,6 +8,7 @@
     "prebuild:fetch-theme-color": "node public/js/fetch-theme-color.js"
   },
   "devDependencies": {
+    "@cloudcannon/visual-editor-connector": "^1.0.2",
     "@nuxt/content": "^2.6.0",
     "@nuxt/image": "^1.0.0-rc.1",
     "@types/node": "^18.15.12",
