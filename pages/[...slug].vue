@@ -39,13 +39,13 @@
 
   const formattedPage = ref(pageData.content_blocks ? formatBookshopName(pageData) : {});
 
-  onMounted(() => {
+  onMounted(async () => {
     onCloudCannonChanges((latestValue) => {
       formattedPage.value = formatBookshopName(latestValue);
     });
   });
 
-  onBeforeUnmount(() => {
+  onBeforeUnmount(async () => {
     stopCloudCannonChanges();
   });
 </script>
