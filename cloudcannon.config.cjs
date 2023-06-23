@@ -2,7 +2,7 @@ module.exports = {
     paths: {
         collections: 'content',
         data: 'data',
-        static: 'dist',
+        static: 'public',
         uploads: 'public/images'
     },
     collections_config: {
