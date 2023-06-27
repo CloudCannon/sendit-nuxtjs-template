@@ -21,7 +21,7 @@
 
   const { page } = useContent();
   if (!page.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true })
   }
   const pageData = page.value;
 

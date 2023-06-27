@@ -9,16 +9,16 @@
 <script setup>
     definePageMeta({ layout: 'blog' });
 
-    const pageData = await queryContent('blog').where({ _path: '/blog' }).findOne();
-    const pageSize = pageData.pagination.size || 9;
     const pageNumber = 1;
 
-    const allPosts = await queryContent('blog')
-        .where({ _path: { $ne: '/blog' } })
-        .only(['title'])
-        .find();
-    const numberOfPosts = allPosts.length;
+    const pageData = await queryContent('blog').where({ _path: '/blog' }).findOne();
+    const pageSize = pageData.pagination.size || 9;
 
+    const allPosts = await queryContent('blog')
+            .where({ _path: { $ne: '/blog' } })
+            .only(['title'])
+            .find();
+    const numberOfPosts = allPosts.length;
     const numberOfPages = Math.ceil(numberOfPosts / pageSize);
 
     const pagedPosts = await queryContent('blog')

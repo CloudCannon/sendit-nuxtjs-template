@@ -9,23 +9,30 @@
 
 <script setup>
     definePageMeta({ layout: 'blog' });
+
     const route = useRoute();
+    const pageNumber = 1;
     const tag = route.params.tag;
     const urlPrefix = `tags/${tag}`;
 
     const pageData = await queryContent('blog').where({ _path: '/blog' }).findOne();
     const pageSize = pageData.pagination.size || 9;
-    const pageNumber = 1;
 
-    const allPosts = await queryContent('blog')
-        .where({
-            _path: { $ne: '/blog' },
-            tags: { $in: [tag] }
-        })
-        .only(['title'])
-        .find();
+    let allPosts;
+    try {
+        allPosts = await queryContent('blog')
+            .where({
+                _path: { $ne: '/blog' },
+                tags: { $in: [tag] }
+            })
+            .only(['title'])
+            .find();
+    } catch (e) {
+        // No files found
+        throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true })
+    }
+
     const numberOfPosts = allPosts.length;
-
     const numberOfPages = Math.ceil(numberOfPosts / pageSize);
 
     const pagedPosts = await queryContent('blog')

@@ -13,6 +13,9 @@
 
     const route = useRoute();
     const pageNumber = parseInt(route.params.pagenumber);
+    if (isNaN(pageNumber)) {
+        navigateTo('/blog')
+    }
 
     const pageData = await queryContent('blog').where({ _path: '/blog' }).findOne();
     const pageSize = pageData.pagination.size || 9;
@@ -22,7 +25,6 @@
         .only(['title'])
         .find();
     const numberOfPosts = allPosts.length;
-
     const numberOfPages = Math.ceil(numberOfPosts / pageSize);
 
     if (pageNumber && (pageNumber <= 1 || numberOfPages === 1)) {
