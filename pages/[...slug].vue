@@ -30,9 +30,10 @@
 
   const formatBookshopName = (pageObject) => {
     pageObject.content_blocks.forEach(function (item) {
-      item._bookshop_name = item._bookshop_name.replace(/[^a-zA-Z0-9 ]/g, ' ')
-        .replace(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase())
-        .replace(' ', '');
+      item._bookshop_name = item._bookshop_name
+        .replaceAll(/[^a-zA-Z0-9 ]/g, ' ')
+        .replaceAll(/(^\w{1})|(\s+\w{1})/g, c => c.toUpperCase())
+        .replaceAll(' ', '');
     });
     return pageObject;
   };
