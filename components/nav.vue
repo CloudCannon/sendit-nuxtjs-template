@@ -111,6 +111,4 @@
 import navData from "../data/nav.json";
 
 const nav = navData;
-
-console.log(nav.logo);
 </script>
