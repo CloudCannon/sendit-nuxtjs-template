@@ -5,7 +5,7 @@
                 <article class="blog-post">
                     <div class="blog-post-thumb">
                         <a :href="post._path">
-                            <nuxt-img format="webp" v-if="post.thumbImg?.image" :src="post.thumbImg?.image"
+                            <img format="webp" v-if="post.thumbImg?.image" :src="post.thumbImg?.image"
                                 :alt="post.thumbImg?.image_alt" loading="lazy" />
                         </a>
                     </div>

@@ -14,7 +14,7 @@
                <div class="testimonial-item">
                   <div class="testimonial-item-person">
                      <div class="thumb">
-                        <nuxt-img format="webp" :src="item.image" alt="logo" class="img-fluid" loading="lazy" v-if="item.image"/>
+                        <img format="webp" :src="item.image" alt="logo" class="img-fluid" loading="lazy" v-if="item.image"/>
                      </div>
                      <div class="content">
                         <h3>{{item.author}}</h3>

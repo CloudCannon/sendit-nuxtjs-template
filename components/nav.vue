@@ -6,7 +6,7 @@
          >
             <div class="container-fluid">
                <a href="/" class="navbar-brand" exact>
-                  <nuxt-img format="webp" :src="nav.logo" alt="Nav-Logo" v-if="nav.logo"/>
+                  <img format="webp" :src="nav.logo" alt="Nav-Logo" v-if="nav.logo"/>
                </a>
                <button
                   class="navbar-toggler"
@@ -111,4 +111,6 @@
 import navData from "../data/nav.json";
 
 const nav = navData;
+
+console.log(nav.logo);
 </script>

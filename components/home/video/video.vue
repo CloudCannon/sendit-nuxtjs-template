@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <div class="banner">
-            <nuxt-img format="webp" style= "border-radius: 20px;"
+            <img format="webp" style= "border-radius: 20px;"
               :src="block.image"
               class="w-100"
               alt="banner-image"

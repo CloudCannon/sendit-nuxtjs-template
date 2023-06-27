@@ -26,8 +26,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@nuxt/content',
-    '@nuxt/image'
+    '@nuxt/content'
   ],
   components: {
     global: true,
