@@ -15492,7 +15492,8 @@ a {
    flex-wrap: wrap;
 }
 
-.nuxt-link-active {
+.router-link-active,
+.router-link-exact-active {
    color: $color-primary;
 }
 

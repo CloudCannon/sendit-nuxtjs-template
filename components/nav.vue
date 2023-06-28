@@ -5,9 +5,9 @@
             id="mainnavigationBar"
          >
             <div class="container-fluid">
-               <a href="/" class="navbar-brand" exact>
+               <NuxtLink to="/" class="navbar-brand" exact>
                   <img format="webp" :src="nav.logo" alt="Nav-Logo" v-if="nav.logo"/>
-               </a>
+               </NuxtLink>
                <button
                   class="navbar-toggler"
                   type="button"
@@ -85,21 +85,17 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto mb-20 mb-lg-0">
                         <li class="nav-item" v-for="item in nav.items">
-                              <a
-                              class="nav-link"
-                              :href="item.link"
-                              >{{ item.text }}
-                        </a>
-
-
+                           <NuxtLink :to="item.link" class="nav-link">
+                              {{ item.text }}
+                           </NuxtLink>
                         </li>
                   </ul>
                </div>
                <div class="d-none d-lg-block">
                   <div class="nav-item">
-                     <a :href="nav.button.link" class="btn btn-sm btn-links" exact>
+                     <NuxtLink :to="nav.button.link" class="btn btn-sm btn-links" exact>
                         {{ nav.button.text }}
-                     </a>
+                     </NuxtLink>
                   </div>
                </div>
             </div>

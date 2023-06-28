@@ -13,7 +13,6 @@ export default defineNuxtConfig({
       script: [
         { src: '/jQuery/jquery.min.js', body: true },
         { src: '/bootstrap/bootstrap.bundle.min.js', body: true },
-        { src: '/js/nav.js', body: true },
         { src: '/waypoints/waypoints.min.js', body: true },
         { src: '/magnific-popup/magnific-popup.min.js', body: true },
         { src: '/magnific-popup/magnific-popup.js', body: true },
