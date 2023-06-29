@@ -1,5 +1,8 @@
 ---
 title: Resources for makers to learn, sell & grow
+thumbImg:
+  image: e
+  image_alt: e
 description: >-
   We believe that a good email marketing strategy is the key to growth. So we’re
   helping you grow your business with tools and resources that make email

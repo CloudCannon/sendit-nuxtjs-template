@@ -1,5 +1,6 @@
 ---
 title: Home
+layout: custom
 content_blocks:
   - _bookshop_name: home/hero
     title: Beautiful email campaigns

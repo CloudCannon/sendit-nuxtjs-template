@@ -14749,7 +14749,7 @@ a {
    align-items: center;
    @include media-breakpoint-down-lg {
       margin-top: $base-margin * 4.5 !important;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: start;
       // height: calc(100vh - 76px);
    }
@@ -14867,7 +14867,7 @@ a {
          font-size: $base-font-size * 1.6;
          position: relative;
          display: flex;
-         justify-content: start;
+         justify-content: flex-start;
          color: $color-text;
          font-weight: 600;
          font-family: $font-primary;
@@ -15057,7 +15057,7 @@ a {
                justify-content: center;
             }
             @include media-breakpoint-down-sm {
-               justify-content: start;
+               justify-content: flex-start;
             }
 
             li {
@@ -15492,7 +15492,8 @@ a {
    flex-wrap: wrap;
 }
 
-.nuxt-link-active {
+.router-link-active,
+.router-link-exact-active {
    color: $color-primary;
 }
 
